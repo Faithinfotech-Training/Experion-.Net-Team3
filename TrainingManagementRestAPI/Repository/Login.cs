@@ -11,7 +11,7 @@ namespace TrainingManagementRestAPI.Repository
     public class Login : ILogin
     {
         Training_AcademyDBContext _db;
-
+        //Dependency injection
         public Login(Training_AcademyDBContext db)
         {
             _db = db;
