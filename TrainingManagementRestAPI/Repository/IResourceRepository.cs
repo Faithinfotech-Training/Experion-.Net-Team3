@@ -8,8 +8,8 @@ namespace TrainingManagementRestAPI.Repository
 {
    public  interface IResourceRepository
     {
-        //Get all Resources
-        Task<List<TblResource>> GetResource();
+        //Get all Resource
+        Task<List<TblResource>> GetResources();
 
         //Add a new Resource
         Task<int> AddResource(TblResource resource);
@@ -19,9 +19,14 @@ namespace TrainingManagementRestAPI.Repository
 
         //Delete Resource
         Task DeleteResource(int id);
-     
-        //Get resource by id
+
+        //Get Resource by id
         Task<TblResource> GetResourceById(int id);
+
+
+
+
+
 
     }
 }

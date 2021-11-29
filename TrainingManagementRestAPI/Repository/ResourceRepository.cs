@@ -15,22 +15,20 @@ namespace TrainingManagementRestAPI.Repository
         {
             db = _db;
         }
-        //Ge Resources
+        //Get Resources
 
         #region Get Resources
-        public async Task<List<TblResource>> GetResource()
+        public async Task<List<TblResource>> GetResources()
         {
-
             if (db != null)
             {
                 return await db.TblResource.ToListAsync();
             }
             return null;
         }
-
         #endregion
 
-        //Add Resources
+        //Add Resource
         #region Add Resource
         public async Task<int> AddResource(TblResource resource)
         {
@@ -46,13 +44,13 @@ namespace TrainingManagementRestAPI.Repository
         #endregion
 
         //Update Resource
-        #region Update Resource
+        #region Update resource
         public async Task UpdateResource(TblResource resource)
         {
             if (db != null)
             {
                 db.TblResource.Update(resource);
-                await db.SaveChangesAsync();//commit the transaction
+                await db.SaveChangesAsync();
 
 
 
@@ -61,12 +59,10 @@ namespace TrainingManagementRestAPI.Repository
         #endregion
 
         //Delete Resource
-        #region Delete Resource
+        #region Delete resource
         public async Task DeleteResource(int id)
         {
-            //--- locating employee by id ---//
-
-            TblResource resource = db.TblResource.FirstOrDefault(rid => rid.ResourceId== id);
+            TblResource resource = db.TblResource.FirstOrDefault(rid => rid.ResourceId == id);
             if (resource != null)
             {
                 resource.IsActive = false;
@@ -74,10 +70,12 @@ namespace TrainingManagementRestAPI.Repository
 
             }
         }
+
+
         #endregion
 
         //Get Resource By Id
-        #region Get Resource By id
+        #region Get Resource by id
         public async Task<TblResource> GetResourceById(int id)
         {
             if (db != null)
@@ -88,6 +86,9 @@ namespace TrainingManagementRestAPI.Repository
             }
             return null;
         }
+
+       
+
         #endregion
 
 
