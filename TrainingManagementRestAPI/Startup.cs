@@ -33,7 +33,7 @@ namespace TrainingManagementRestAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<Training_AcademyDBContext>(
+            services.AddDbContext<TrainingAcademyDBContext>(
                item => item.UseSqlServer(Configuration.GetConnectionString("ConStr"))
                );
             
