@@ -10,9 +10,9 @@ namespace TrainingManagementRestAPI.Repository
 {
     public class Login : ILogin
     {
-        Training_AcademyDBContext _db;
+        TrainingAcademyDBContext _db;
         //Dependency injection
-        public Login(Training_AcademyDBContext db)
+        public Login(TrainingAcademyDBContext db)
         {
             _db = db;
         }

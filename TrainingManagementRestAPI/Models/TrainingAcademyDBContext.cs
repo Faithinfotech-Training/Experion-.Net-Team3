@@ -6,13 +6,13 @@ using Microsoft.Extensions.Configuration;
 
 namespace TrainingManagementRestAPI.Models
 {
-    public partial class Training_AcademyDBContext : DbContext
+    public partial class TrainingAcademyDBContext : DbContext
     {
-        public Training_AcademyDBContext()
+        public TrainingAcademyDBContext()
         {
         }
 
-        public Training_AcademyDBContext(DbContextOptions<Training_AcademyDBContext> options)
+        public TrainingAcademyDBContext(DbContextOptions<TrainingAcademyDBContext> options)
             : base(options)
         {
         }
