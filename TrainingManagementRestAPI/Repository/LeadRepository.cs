@@ -10,9 +10,9 @@ namespace TrainingManagementRestAPI.Repository
     public class LeadRepository:ILeadRepository
     {
 
-        Training_AcademyDBContext db;
+        TrainingAcademyDBContext db;
 
-        public LeadRepository(Training_AcademyDBContext _db)
+        public LeadRepository(TrainingAcademyDBContext _db)
         {
             db = _db;
         }
