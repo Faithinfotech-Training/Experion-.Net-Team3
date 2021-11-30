@@ -38,6 +38,9 @@ namespace TrainingManagementRestAPI
                );
             
             services.AddScoped<ILogin, Login>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<IResourceRepository, ResourceRepository>();
+
             //jwt
 
             //register a JWT authentication schema
