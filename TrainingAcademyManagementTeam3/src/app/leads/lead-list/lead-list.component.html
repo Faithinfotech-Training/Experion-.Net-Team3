@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="header">
+        <h5 class="text-center">
+            Lead Info
+        </h5>
+        <!--Search-->
+        <div class="form-group">
+            <input class="form-control" type ="text"
+            placeholder="search here..."
+            [(ngModel)] ="filter">
+
+        </div>
+        <a [routerLink]="['../lead']"class="btn btn-primary" style="float: right; margin-bottom: 10px;">Add Course</a>
+       
+    </div>
+    <!--Table list-->
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                   Lead ID
+                </th>
+                <th>
+                   Name
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                   Pincode
+                </th>
+                <th>
+                   DOB
+                 </th>
+                 <th>
+                    Highest Qualification
+                  </th>
+                <th>
+                    Phone no
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                   Action
+                </th>
+               
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lead of this.leadService.leads | filter: filter | paginate: {itemsPerPage: 5, currentPage:page} "  >
+                <td (click)="populateForm(lead)">{{lead.LeadId}}</td>
+                <td (click)="populateForm(lead)">{{lead.LeadName}}</td>
+                <td (click)="populateForm(lead)">{{lead.Gender}}</td>
+                <td (click)="populateForm(lead)">{{lead.State}}</td>
+                <td (click)="populateForm(lead)">{{lead.City}}</td>
+                <td (click)="populateForm(lead)">{{lead.Pincode}}</td>
+                <td (click)="populateForm(lead)">{{lead.Dob}}</td>
+                <td (click)="populateForm(lead)">{{lead.HighestQualification}}</td>
+                <td (click)="populateForm(lead)">{{lead.ContactNo}}</td>
+                <td (click)="populateForm(lead)">{{lead.Email}}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-danger"
+                    (click)="deleteLead(lead.LeadId)">X</button>&nbsp;
+                    <button (click)="updateLead(lead.LeadId)"  class="btn btn-info" style="margin-left: 10px;">Edit</button>
+                    
+                </td>
+                
+               
+               
+
+            </tr>
+        </tbody>
+
+
+
+    </table>
+    <div class="footer">
+        <!--pagination-->
+        <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+
+    </div>
+
+</div>
+
+
+

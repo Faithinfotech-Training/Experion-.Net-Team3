@@ -1,0 +1,129 @@
+<div class="container register-form" >
+    <div><h2>User Details</h2></div>
+    <form name="leadform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+        <!--Lead id-->
+        <input type="text" name="LeadId" [ngModel]="leadService.formData.LeadId" />
+
+        <!--Lead name-->
+        <div class="form-group">
+
+            <label>Full Name</label>
+            <input name="LeadName" #LeadName="ngModel" [ngModel]="leadService.formData.LeadName" class="form-control"
+                placeholder="Enter full name" minlength="2" maxlength="25" required
+                [ngClass]="{'is-invalid':LeadName.touched && LeadName.invalid}" />
+            <div class="validation-error" *ngIf="LeadName.touched && LeadName.invalid">
+
+                <div *ngIf="LeadName.errors.required">
+                    First Name is required</div>
+            </div>
+        </div>
+
+
+        <!--Highest Qualification-->
+        <div class="form-group">
+
+            <label>Highest Qualification</label>
+            <input name="HighestQualification" #HighestQualification="ngModel"
+                [ngModel]="leadService.formData.HighestQualification" class="form-control"
+                placeholder="Enter Highest Qualification" minlength="2" maxlength="25" required
+                [ngClass]="{'is-invalid':HighestQualification.touched && HighestQualification.invalid}" />
+            <div class="validation-error" *ngIf="HighestQualification.touched && HighestQualification.invalid">
+
+                <div *ngIf="HighestQualification.errors.required">
+                    Highest Qualification is required</div>
+            </div>
+        </div>
+        <!--Date of Birth-->
+        <div class="form-group">
+
+            <label>Date of Birth</label>
+            <input type="date" name="Dob" id="Dob" #Dob="ngModel" [ngModel]="leadService.formData.Dob"
+                class="form-control" required [ngClass]="{'is-invalid':Dob.touched && Dob.invalid}" />
+            <div class="validation-error" *ngIf="Dob.touched && Dob.invalid">
+
+                <div *ngIf="Dob.errors.required">
+                    Date Of Birth is required</div>
+            </div>
+        </div>
+
+        <!--State-->
+        <div class="form-group">
+
+            <label>State</label>
+            <input type="text" name="AddState" #AddState="ngModel" [ngModel]="leadService.formData.AddState"
+                class="form-control" placeholder="Enter State" minlength="2" maxlength="25" required
+                [ngClass]="{'is-invalid':AddState.touched && AddState.invalid}" />
+            <div class="validation-error" *ngIf="AddState.touched && AddState.invalid">
+
+                <div *ngIf="AddState.errors.required">
+                    State is required</div>
+            </div>
+        </div>
+
+        <!--City-->
+        <div class="form-group">
+
+            <label>City</label>
+            <input name="City" #City="ngModel" [ngModel]="leadService.formData.City" class="form-control"
+                placeholder="Enter City" minlength="2" maxlength="25" required
+                [ngClass]="{'is-invalid':City.touched && City.invalid}" />
+            <div class="validation-error" *ngIf="City.touched && City.invalid">
+
+                <div *ngIf="City.errors.required">
+                    city is required</div>
+            </div>
+        </div>
+
+        <!--Pincode-->
+        <div class="form-group">
+
+            <label>Pincode</label>
+            <input type="number" name="Pincode" #Pincode="ngModel" [ngModel]="leadService.formData.Pincode"
+                class="form-control" placeholder="Enter Pincode" minlength="6" maxlength="6" required
+                [ngClass]="{'is-invalid':Pincode.touched && Pincode.invalid}" />
+            <div class="validation-error" *ngIf="Pincode.touched && Pincode.invalid">
+
+                <div *ngIf="Pincode.errors.required">
+                    Pincode is required</div>
+            </div>
+        </div>
+
+        <!--ContactNo-->
+        <div class="form-group">
+
+            <label>ContactNo</label>
+            <input type="number" name="ContactNo" #ContactNo="ngModel" [ngModel]="leadService.formData.ContactNo"
+                class="form-control" placeholder="Enter ContactNo" minlength="10" maxlength="10" required
+                [ngClass]="{'is-invalid':ContactNo.touched && ContactNo.invalid}" />
+            <div class="validation-error" *ngIf="ContactNo.touched && ContactNo.invalid">
+
+                <div *ngIf="ContactNo.errors.required">
+                    Contact No is required</div>
+            </div>
+        </div>
+        <!--Email-->
+        <div class="form-group">
+
+            <label>Email</label>
+            <input type="text" name="Email" #Email="ngModel" [ngModel]="leadService.formData.Email" class="form-control"
+                placeholder="Enter Email" required [ngClass]="{'is-invalid':Email.touched && Email.invalid}" />
+            <div class="validation-error" *ngIf="Email.touched && Email.invalid">
+
+                <div *ngIf="Email.errors.required">
+                    Email is required</div>
+            </div>
+        </div>
+
+
+
+
+        <!--submit button-->
+        <br>
+        <div class="form-group">
+            <button type="submit" [disabled]="!(form.valid && form.dirty)"
+                class="btn btn-lg btn-primary form-control">Submit</button>
+        </div>
+
+    </form>
+
+</div>

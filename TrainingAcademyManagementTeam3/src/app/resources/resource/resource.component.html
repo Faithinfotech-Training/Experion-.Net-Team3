@@ -1,0 +1,84 @@
+<form name="resform" #form="ngForm" autocomplete="off"
+(ngSubmit)="onSubmit(form)">
+
+    <!--Resource Id-->
+
+    <input type="text" name="ResourceId" [(ngModel)]="resservice.formData.ResourceId" />
+
+    <!--Resource Name-->
+
+    <div class="form-group">
+
+        <label>Resource Name</label>
+
+        <input name="ResourceName" #ResourceName="ngModel" [(ngModel)]="resservice.formData.ResourceName"
+            class="form-control" place holder="Enter Resource Name " minLength="10" maxLength="25" required
+            [ngClass]="{'is invalid':ResourceName.touched && ResourceName.invalid}" />
+
+        <div class="validation-error" *ngIf="ResourceName.touched&&ResourceName.invalid">
+
+            <div *ngIf="ResourceName.errors.required">Resource Name is required</div>
+
+        </div>
+
+
+
+    </div>
+
+    <!--Resource Fees-->
+
+    <div class="form-group">
+
+        <label>Resource Fees</label>
+
+        <input type="number" name="ResourceFees" #ResourceFees="ngModel" [(ngModel)]="resservice.formData.ResourceFees"
+            class="form-control" place holder="Enter Resource Fees " minLength="2" maxLength="25" required
+            [ngClass]="{'is invalid':ResourceFees.touched && ResourceFees.invalid}" />
+
+        <div class="validation-error" *ngIf="ResourceFees.touched&&ResourceFees.invalid">
+
+            <div *ngIf="ResourceFees.errors.required">Resource Fees is required</div>
+
+        </div>
+    </div>
+
+    
+
+
+    <!--Resource Description-->
+
+    <div class="form-group">
+
+        <label>Resource Description</label>
+
+        <input name="ResourceDescription" #ResourceDescription="ngModel" [(ngModel)]="resservice.formData.ResourceDescription"
+            class="form-control" place holder="Enter Resource Description " minLength="2" maxLength="25" required
+            [ngClass]="{'is invalid':ResourceDescription.touched && ResourceDescription.invalid}" />
+
+        <div class="validation-error" *ngIf="ResourceDescription.touched&&ResourceDescription.invalid">
+
+            <div *ngIf="ResourceDescription.errors.required">Resource Description is required</div>
+
+        </div>
+    </div>
+ <!--Is Active-->
+
+ <div class="form-group">
+    <div class="form-check">
+        <label class="form-check-label">Is Active</label>
+        <input type="checkbox" name="IsActive" id="IsActive" #IsActive="ngModel"
+            [(ngModel)]="resservice.formData.IsActive" class="form-check-input">
+
+    </div>
+</div>
+
+    <!--Submit button-->
+    <br>
+    <div class="form-group" >
+        <button type="submit" [disabled]="!(form.valid && form.dirty)"
+        class="btn btn-lg btn-primary form-control">Submit</button>
+    </div>
+
+
+</form>
+

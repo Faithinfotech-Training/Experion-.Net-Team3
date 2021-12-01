@@ -1,0 +1,52 @@
+<form name="confirmform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+    <!--Login id-->
+    <input type="hidden" name="LoginId" [ngModel]="conService.formData.LoginId" />
+
+    <!--Role id-->
+    <input type="hidden" name="RoleId" [ngModel]="conService.formData.RoleId" />
+
+
+    <!--UserName-->
+    <div class="form-group">
+
+        <label>UserName</label>
+        <input name="UserName" #UserName="ngModel" [ngModel]="conService.formData.UserName"
+            class="form-control" placeholder="Enter full name" minlength="2" maxlength="25" required
+            [ngClass]="{'is-invalid':UserName.touched && UserName.invalid}" />
+        <div class="validation-error" *ngIf="UserName.touched && UserName.invalid">
+
+            <div *ngIf="UserName.errors.required">
+                UserName is required</div>
+        </div>
+    </div>
+
+
+
+ <!--Confirm Password-->
+ <div class="form-group">
+
+    <label>Confirm Password</label>
+    <input type ="password" name ="UserPassword" #UserPassword="ngModel" [ngModel]="conService.formData.UserPassword"
+        class="form-control" placeholder="Enter Password" minlength="6" maxlength="25" required
+        [ngClass]="{'is-invalid':UserPassword.touched && UserPassword.invalid}" />
+    <div class="validation-error" *ngIf="UserPassword.touched && UserPassword.invalid">
+
+        <div *ngIf="UserPassword.errors.required">
+            Confirm Password is required</div>
+    </div>
+</div>
+
+
+
+   
+    <!--submit button-->
+    <br>
+    <div class="form-group">
+        <button type="submit" [disabled]="!(form.valid && form.dirty)"
+            class="btn btn-lg btn-primary form-control">Submit</button>
+    </div>
+
+
+</form>
+
+

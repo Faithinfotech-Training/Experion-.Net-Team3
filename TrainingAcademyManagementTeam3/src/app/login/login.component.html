@@ -1,0 +1,64 @@
+<div class="container px-4 py-5 mx-auto">
+    <div class="card card0">
+        <div class="d-flex flex-lg-row flex-column-reverse">
+            <div class="card card1">
+                <div class="row justify-content-center my-auto">
+                    <div class="col-md-8 col-10 my-5">
+                       
+                        <h3 class="mb-5 text-center heading">We are GeoInfoTech</h3>
+                        <h6 class="msg-info">Please login to your account</h6>
+                        <form [formGroup]="loginForm" (ngSubmit)="loginCredentials()">
+                            <!--Username-->
+                            <div>
+                                <input type="text" placeholder="Enter the user name" formControlName="UserName" autocomplete="off"
+                                    required />
+                            </div>
+                            <div *ngIf="isSubmitted && formControls.UserName.errors">
+                                <div *ngIf="formControls.UserName.errors.required" style="color:red;text-align:left ;">
+                                    Username is required
+                                </div>
+                
+                            </div>
+                            <!--Userpassword-->
+                            <br>
+                            <div>
+                                <input type="password" placeholder="Enter the userpassword" formControlName="UserPassword"
+                                    autocomplete="off" required />
+                            </div>
+                            <div *ngIf="isSubmitted && formControls.UserPassword.errors">
+                                <div *ngIf="formControls.UserPassword.errors.required" style="color:red;text-align:left ;">
+                                    User Password is required
+                                </div>
+                
+                            </div>
+                            <br>
+                            <div class="row justify-content-center my-3 px-3">  <button class="btn-block btn-color">
+                                Login
+                            </button> </div>
+                
+                            
+                            <div *ngIf=" error" style="color: red; text-align: left;">
+                
+                                {{error}}
+                            </div>
+                
+                
+                
+                
+                
+                        </form>
+                        
+                        <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted">Forgot Password?</small></a> </div>
+                    </div>
+                </div>
+                <div class="bottom text-center mb-5">
+                    <p href="#" class="sm-text mx-auto mb-3">Don't have an account?<button class="btn btn-white ml-2">Register</button></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+

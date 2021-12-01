@@ -1,0 +1,42 @@
+<body>
+    <div class="container">
+        <div class="header">
+            <h5>Resource Details</h5>
+            <!--Search functionality-->
+            <div class="form-group">
+                <input class="form-control" type="text"
+                placeholder="Search here..." [(ngModel)]="filter"> 
+    
+            </div>
+          <br>
+         
+        </div>
+        <table class="table table-bordered table-striped">
+         <thead>
+             <tr>
+                 <th>Resource Id</th>
+                 <th>Resource Name</th>
+                 <th>Resource Fees</th>
+                 <th>Resource Description</th>
+                 <th>Is Active</th>
+                 
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let crs of resourceService.resources  |filter: filter |paginate:{itemsPerPage:2, currentPage: page}" >
+                 <td >{{crs.ResourceId}}</td>
+                 <td >{{crs.ResourceName}}</td>
+                 <td >{{crs.ResourceFees}}</td>
+                 <td >{{crs.ResourceDescription}}</td>
+                 <td >{{crs.IsActive}}</td>
+                
+             </tr>
+         </tbody>
+        </table>
+        <div class="footer">
+            <!--Pagination-->
+            <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+        </div>
+    
+    </div>
+    </body>

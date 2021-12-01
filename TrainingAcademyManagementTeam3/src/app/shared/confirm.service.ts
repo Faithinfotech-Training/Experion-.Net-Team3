@@ -1,0 +1,28 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Confirm } from './confirm';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ConfirmService {
+
+  formData:Confirm =new Confirm();
+  
+  
+  confirms:Confirm[];
+  constructor(private httpClient:HttpClient) { }
+
+
+
+
+//insert user
+insertUser(confirm:Confirm):Observable<any>
+{
+  return this.httpClient.post(environment.apiUrl+"/api/lead/Adduser",confirm);
+
+}
+ }
+
