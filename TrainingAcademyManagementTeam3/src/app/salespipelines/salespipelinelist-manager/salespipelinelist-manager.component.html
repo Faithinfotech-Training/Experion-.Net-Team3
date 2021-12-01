@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="header">
+        <h5>SalesPipeline Details</h5>
+        <!--Search functionality-->
+        <div class="form-group">
+            <input class="form-control" type="text"
+            placeholder="Search here..." [(ngModel)]="filter"> 
+
+        </div>
+      <br>
+     
+    </div>
+    <table class="table table-bordered table-striped">
+     <thead>
+         <tr>
+             <th>SalesPipeline Id</th>
+             <th>Lead Id</th>
+             <th>Stage</th>
+             <th>Priority</th>
+             <th>Close Date</th>
+             <th>Last Contact</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let crs of salespipelineService.salespipelines  |filter: filter |paginate:{itemsPerPage:2, currentPage: page}" >
+             <td>{{crs.SalesPipelineId}}</td>
+             <td>{{ crs.LeadId}}</td>
+             <td>{{crs.Stage}}</td>
+             <td>{{crs.Priority}}</td>
+             <td>{{crs.CloseDate}}</td>
+             <td>{{crs.LastContact}}</td>
+         </tr>
+     </tbody>
+    </table>
+    <div class="footer">
+        <!--Pagination-->
+        <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+    </div>
+
+</div>
+    
+

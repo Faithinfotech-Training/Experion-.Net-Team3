@@ -19,7 +19,7 @@ import { LeadsComponent } from './leads/leads.component';
 import { BatchListComponent } from './batches/batch-list/batch-list.component';
 import { BatchComponent } from './batches/batch/batch.component';
 import { BatchesComponent } from './batches/batches.component';
-
+import { SalespipelinelistManagerComponent } from './salespipelines/salespipelinelist-manager/salespipelinelist-manager.component';
 
 const routes: Routes = [
   { path: '',redirectTo:'/home', pathMatch:'full'},
@@ -48,7 +48,8 @@ const routes: Routes = [
   {path:'batch', component: BatchComponent},
   {path:'batchlist',component: BatchListComponent},
   {path:'batch/:batId', component: BatchComponent},
-  {path:'batchlist/batch',component: BatchComponent}
+  {path:'batchlist/batch',component: BatchComponent},
+  {path:'salespipeline',component: SalespipelinelistManagerComponent }
 
 ];
 

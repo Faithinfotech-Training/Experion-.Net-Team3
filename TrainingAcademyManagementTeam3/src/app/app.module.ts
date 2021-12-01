@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CourseService } from './shared/course.service';
 import { ResourceService } from './shared/resource.service';
+import { BatchService } from './shared/batch.service';
+import { SalesPipelineService } from './shared/salespipeline.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +41,8 @@ import { LeadService } from './shared/lead.service';
 import { BatchesComponent } from './batches/batches.component';
 import { BatchComponent } from './batches/batch/batch.component';
 import { BatchListComponent } from './batches/batch-list/batch-list.component';
-import { BatchService } from './shared/batch.service';
+import { SalespipelinesComponent } from './salespipelines/salespipelines.component';
+import { SalespipelinelistManagerComponent } from './salespipelines/salespipelinelist-manager/salespipelinelist-manager.component';
 
 
 @NgModule({
@@ -64,6 +67,8 @@ import { BatchService } from './shared/batch.service';
     BatchesComponent,
     BatchComponent,
     BatchListComponent,
+    SalespipelinesComponent,
+    SalespipelinelistManagerComponent,
   
    
     
