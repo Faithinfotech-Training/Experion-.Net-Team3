@@ -36,6 +36,10 @@ import { LeadListComponent } from './leads/lead-list/lead-list.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { ConfirmService } from './shared/confirm.service';
 import { LeadService } from './shared/lead.service';
+import { BatchesComponent } from './batches/batches.component';
+import { BatchComponent } from './batches/batch/batch.component';
+import { BatchListComponent } from './batches/batch-list/batch-list.component';
+import { BatchService } from './shared/batch.service';
 
 
 @NgModule({
@@ -57,8 +61,9 @@ import { LeadService } from './shared/lead.service';
     LeadComponent,
     LeadListComponent,
     ConfirmComponent,
-   
-   
+    BatchesComponent,
+    BatchComponent,
+    BatchListComponent,
   
    
     

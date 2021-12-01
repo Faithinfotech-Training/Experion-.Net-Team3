@@ -16,6 +16,9 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { LeadComponent } from './leads/lead/lead.component';
 import { LeadListComponent } from './leads/lead-list/lead-list.component';
 import { LeadsComponent } from './leads/leads.component';
+import { BatchListComponent } from './batches/batch-list/batch-list.component';
+import { BatchComponent } from './batches/batch/batch.component';
+import { BatchesComponent } from './batches/batches.component';
 
 
 const routes: Routes = [
@@ -41,6 +44,11 @@ const routes: Routes = [
   {path :'lead',component:LeadComponent}, //route.snapshot.params[]
   {path :'leadlist',component:LeadListComponent},
   {path :'lead/:leadId',component:LeadComponent}, //route.snapshot.params[]
+  {path:'batches',component:BatchesComponent},
+  {path:'batch', component: BatchComponent},
+  {path:'batchlist',component: BatchListComponent},
+  {path:'batch/:batId', component: BatchComponent},
+  {path:'batchlist/batch',component: BatchComponent}
 
 ];
 
