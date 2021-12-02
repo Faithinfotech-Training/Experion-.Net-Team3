@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {AuthGuard} from './shared/auth.guard';
+import { AuthGuard } from './shared/auth.guard';
 import { AuthService } from './shared/auth.service';
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -54,6 +54,9 @@ import { ResourceenquiryComponent } from './resourceenquiries/resourceenquiry/re
 import { ResourceenquiryListComponent } from './resourceenquiries/resourceenquiry-list/resourceenquiry-list.component';
 import { ResourceenquiriesComponent } from './resourceenquiries/resourceenquiries.component';
 
+import { CourseenquiryviewComponent } from './manager/courseenquiryview/courseenquiryview.component';
+import { CourseenquiryviewService } from './shared/courseenquiryview.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,11 +89,9 @@ import { ResourceenquiriesComponent } from './resourceenquiries/resourceenquirie
     ResourceenquiriesComponent,
     ResourceenquiryListComponent,
     ResourceenquiryComponent,
-    EditresourceenquiryComponent
-    
-  
-   
-    
+    EditresourceenquiryComponent,
+    CourseenquiryviewComponent
+
   ],
   imports: [
     BrowserModule,
@@ -103,11 +104,11 @@ import { ResourceenquiriesComponent } from './resourceenquiries/resourceenquirie
     Ng2SearchPipeModule,
     ReactiveFormsModule
   ],
-  providers: [CourseService,ResourceService,ResourceenquiryviewService,ConfirmService,LeadService,AuthGuard,AuthService,
+  providers: [CourseService, ResourceService, ResourceenquiryviewService, ConfirmService, LeadService, AuthGuard, AuthService, CourseenquiryviewService,
     {
-      provide:HTTP_INTERCEPTORS,
-      useClass:AuthInterceptor,
-      multi:true
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
     }],
   bootstrap: [AppComponent]
 })

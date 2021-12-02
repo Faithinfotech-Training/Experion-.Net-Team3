@@ -1,7 +1,7 @@
 <div class="container">
     <div class="header">
         <h5 class="text-center">
-           Resource Enquiry Information
+           Course Enquiry Info
         </h5>
         <!--Search-->
         <div class="form-group">
@@ -16,32 +16,32 @@
         <thead>
             <tr>
                 <th>
-                    Resource Enquiry ID
+                    CourseEnquiry ID
                 </th>
                 <th>
                     Lead ID
                 </th>
                 <th>
-                    Lead Name
+                    LeadName
                 </th>
                 <th>
-                    Resource Name
+                    CourseName
                 </th>
                 <th>
-                    Resource Enquiry Status
+                    CourseEnquiry Status
                 </th>
                
             </tr>
         </thead>
         <tbody>
             <tr
-                *ngFor="let view of this.resourceenquiryviewService.resourceenquiryviews | filter: filter | paginate: {itemsPerPage: 5, currentPage:page} ">
-                <td>{{view.ResourceEnquiryId}}</td>
+                *ngFor="let view of this.courseenquiryviewService.courseenquiryviews | filter: filter | paginate: {itemsPerPage: 5, currentPage:page} ">
+                <td>{{view.CourseEnquiryId}}</td>
                 <td>{{view.LeadId}}</td>
                 <td>{{view.LeadName}}</td>
-                <td>{{view.ResourceName}}</td>
-                <td>{{view.ResourceEnquiryStatus}}</td>
-                
+                <td>{{view.CourseName}}</td>
+                <td>{{view.CourseEnquiryStatus}}</td>
+               
 
             </tr>
         </tbody>

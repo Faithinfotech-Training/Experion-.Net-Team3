@@ -80,12 +80,13 @@ export class LeadComponent implements OnInit {
         ((result)=>
         {
           console.log(result);
+          sessionStorage.setItem("LeadId",result.toString());
           this.resetform(form);
           this.toastrService.success('Personal Details successfully inserted');
          
         }
         );
-        window.alert("Lead record has been inserted");
+        window.alert("Personal Details successfully inserted");
         this.router.navigate(['/confirm'])
       }
     
@@ -98,7 +99,7 @@ export class LeadComponent implements OnInit {
           {
             console.log(result);
             this.resetform(form);
-            this.toastrService.success('lead record has been inserted','CRM appv2021');
+            this.toastrService.success('lead record has been inserted');
            this.leadService.bindLead();
           }
           );

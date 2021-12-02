@@ -1,21 +1,51 @@
-<div class="container register-form" >
-    <div><h2>User Details</h2></div>
+<div class="container register-form">
+    <div>
+        <h2>Register here</h2>
+    </div>
     <form name="leadform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
         <!--Lead id-->
-        <input type="text" name="LeadId" [ngModel]="leadService.formData.LeadId" />
+        <input type="hidden" name="LeadId" [ngModel]="leadService.formData.LeadId" />
 
         <!--Lead name-->
         <div class="form-group">
 
-            <label>Full Name</label>
+            <label> Name</label>
             <input name="LeadName" #LeadName="ngModel" [ngModel]="leadService.formData.LeadName" class="form-control"
-                placeholder="Enter full name" minlength="2" maxlength="25" required
+                placeholder="Enter full name" minlength="3" maxlength="25" required
                 [ngClass]="{'is-invalid':LeadName.touched && LeadName.invalid}" />
             <div class="validation-error" *ngIf="LeadName.touched && LeadName.invalid">
 
                 <div *ngIf="LeadName.errors.required">
-                    First Name is required</div>
+                    Name is required</div>
             </div>
+        </div>
+        <!--Gender-->
+        <div class="form-group">
+
+            <label for="Gender">Gender</label>
+
+            &nbsp;&nbsp;
+
+            <label class="radio-inline">
+
+                <input type="radio" name="Gender" [(ngModel)]="leadService.formData.Gender" value="Male" required
+                    #Gender="ngModel" checked="checked">Male
+
+            </label>
+            &nbsp;
+            <label class="radio-inline">
+
+                <input type="radio" name="Gender" [(ngModel)]="leadService.formData.Gender" value="female"
+                    required>female
+
+            </label>
+
+            <div class="validation-error" *ngIf=" Gender.invalid">
+
+               
+
+            </div>
+
         </div>
 
 
@@ -23,7 +53,7 @@
         <div class="form-group">
 
             <label>Highest Qualification</label>
-            <input name="HighestQualification" #HighestQualification="ngModel"
+            <input type="text" name="HighestQualification" #HighestQualification="ngModel"
                 [ngModel]="leadService.formData.HighestQualification" class="form-control"
                 placeholder="Enter Highest Qualification" minlength="2" maxlength="25" required
                 [ngClass]="{'is-invalid':HighestQualification.touched && HighestQualification.invalid}" />
@@ -51,7 +81,7 @@
 
             <label>State</label>
             <input type="text" name="AddState" #AddState="ngModel" [ngModel]="leadService.formData.AddState"
-                class="form-control" placeholder="Enter State" minlength="2" maxlength="25" required
+                class="form-control" placeholder="Enter State" minlength="2" maxlength="15" required
                 [ngClass]="{'is-invalid':AddState.touched && AddState.invalid}" />
             <div class="validation-error" *ngIf="AddState.touched && AddState.invalid">
 
@@ -65,7 +95,7 @@
 
             <label>City</label>
             <input name="City" #City="ngModel" [ngModel]="leadService.formData.City" class="form-control"
-                placeholder="Enter City" minlength="2" maxlength="25" required
+                placeholder="Enter City" minlength="2" maxlength="15" required
                 [ngClass]="{'is-invalid':City.touched && City.invalid}" />
             <div class="validation-error" *ngIf="City.touched && City.invalid">
 
@@ -78,9 +108,9 @@
         <div class="form-group">
 
             <label>Pincode</label>
-            <input type="number" name="Pincode" #Pincode="ngModel" [ngModel]="leadService.formData.Pincode"
+            <input type="text" name="Pincode" #Pincode="ngModel" [ngModel]="leadService.formData.Pincode"
                 class="form-control" placeholder="Enter Pincode" minlength="6" maxlength="6" required
-                [ngClass]="{'is-invalid':Pincode.touched && Pincode.invalid}" />
+                [ngClass]="{'is-invalid':Pincode.touched && Pincode.invalid}" pattern="^[0-9]*$" />
             <div class="validation-error" *ngIf="Pincode.touched && Pincode.invalid">
 
                 <div *ngIf="Pincode.errors.required">
@@ -92,27 +122,36 @@
         <div class="form-group">
 
             <label>ContactNo</label>
-            <input type="number" name="ContactNo" #ContactNo="ngModel" [ngModel]="leadService.formData.ContactNo"
+            <input type="text" name="ContactNo" #ContactNo="ngModel" [ngModel]="leadService.formData.ContactNo"
                 class="form-control" placeholder="Enter ContactNo" minlength="10" maxlength="10" required
-                [ngClass]="{'is-invalid':ContactNo.touched && ContactNo.invalid}" />
+                [ngClass]="{'is-invalid':ContactNo.touched && ContactNo.invalid}" pattern="^((\\+91-?)|0)?[0-9]{10}$" />
             <div class="validation-error" *ngIf="ContactNo.touched && ContactNo.invalid">
 
                 <div *ngIf="ContactNo.errors.required">
                     Contact No is required</div>
+                <div *ngif="Contact.errors.pattern">Email address is invalid</div>
             </div>
         </div>
         <!--Email-->
         <div class="form-group">
 
             <label>Email</label>
-            <input type="text" name="Email" #Email="ngModel" [ngModel]="leadService.formData.Email" class="form-control"
-                placeholder="Enter Email" required [ngClass]="{'is-invalid':Email.touched && Email.invalid}" />
+            <input type="email" name="Email" #Email="ngModel" [ngModel]="leadService.formData.Email"
+                class="form-control" placeholder="Enter Email" required
+                [ngClass]="{'is-invalid':Email.touched && Email.invalid}"
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
             <div class="validation-error" *ngIf="Email.touched && Email.invalid">
 
                 <div *ngIf="Email.errors.required">
-                    Email is required</div>
+                    Email is required
+                </div>
+                <div *ngif="Email.errors.pattern">Email address is invalid</div>
             </div>
         </div>
+
+        <!--Is Active-->
+
+        <input type="hidden" name="IsActive" [ngModel]="leadService.formData.IsActive" />
 
 
 

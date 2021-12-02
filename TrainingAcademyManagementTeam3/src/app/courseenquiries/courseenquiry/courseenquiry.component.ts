@@ -61,7 +61,7 @@ courseenquiry:Courseenquiry=new Courseenquiry();
  // form.value.LeadId=sessionStorage.getItem('UserId');
  form.value.CourseEnquiryStatus="Pending"
  form.value.CourseEnquiryDate=new Date();
- form.value.LeadId=2;
+ form.value.LeadId=Number(sessionStorage.getItem("LoginId"));
  if(this.CourseEnquiryId!=0||(this.CourseEnquiryId!=null))
     {
       this.cenqService.getCourseEnquiry(this.CourseEnquiryId).subscribe(
@@ -84,6 +84,7 @@ courseenquiry:Courseenquiry=new Courseenquiry();
     }
   );
  // window.location.reload();
+ window.alert("Enquiry submitted successfully");
 }
 
 UpdateCourseEnquiryRecord(form:NgForm)

@@ -65,12 +65,13 @@ InsertResourceEnquiryRecord(form:NgForm)
  // form.value.LeadId=sessionStorage.getItem('UserId');
  form.value.ResourceEnquiryStatus="Pending"
  form.value.ResourceEnquiryDate=new Date();
- form.value.LeadId=2;
+ form.value.LeadId=Number(sessionStorage.getItem("LoginId"));
  if(this.ResourceEnquiryId!=0||(this.ResourceEnquiryId!=null))
     {
       this.renqService.getResourceEnquiry(this.ResourceEnquiryId).subscribe(
         data=>{console.log(data);
           console.log("hiiii")
+          //date format
         var datePipe=new DatePipe("en-UK");
         let formatedDate:any=datePipe.transform(data.ResourceEnqiryDate,'yyyy-MM-dd');
         data.ResourceEnqiryDate=formatedDate
@@ -87,6 +88,7 @@ InsertResourceEnquiryRecord(form:NgForm)
       this.resetForm(form);
     }
   );
+  window.alert("Enquiry submitted successfully");
  // window.location.reload();
 }
 UpdateResourceEnquiryRecord(form:NgForm)

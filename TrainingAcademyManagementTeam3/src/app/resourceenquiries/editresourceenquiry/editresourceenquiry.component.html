@@ -14,14 +14,15 @@
 
 </select><!--<input type="" name="ResourceEnquiryStatus" [ngModel]="renqService.formData.ResourceEnquiryStatus"class="form-control" placeholder="Enter full name" minlength="10" maxlength="25" required
     />--><br><br>
-    <select style="display: none;"  name="ResourceId" id="ResourceId" class="form-control" #ResourceId="ngModel" required
+    <select style="display:none ;"  name="ResourceId" id="ResourceId" class="form-control" #ResourceId="ngModel" required
             [(ngModel)]="renqService.formData.ResourceId">
             <option value=0 disabled>Choose Resource</option>
             <option *ngFor="let res of renqService.resources" value="{{res.ResourceId}}">{{res.ResourceName}}</option>
 
 
         </select>
-        <input style="display: none;"  type="" name="LeadId" [ngModel]="renqService.formData.LeadId"class="form-control" placeholder="Enter full name" minlength="10" maxlength="25" required
+        <label>Lead Id</label>
+        <input   type="" name="LeadId" [ngModel]="renqService.formData.LeadId"class="form-control" placeholder="Enter full name" minlength="10" maxlength="25" required
     />
         <input style="display: none;"  type="date" name="ResourceEnquiryDate" #ResourceEnquiryDate="ngModel" [(ngModel)]="renqService.formData.ResourceEnquiryDate"
         class="form-control"  [ngClass]="{ 'is-invalid': ResourceEnquiryDate.touched

@@ -59,7 +59,7 @@ export class EnquiryService {
   }
 
   BindCmbResources() {
-    this.httpClient.get(environment.apiUrl + "/api/resource/getresources")
+    this.httpClient.get(environment.apiUrl + "/api/resource")
       .toPromise().then(response =>
         this.resources = response as Resource[]
       );
@@ -67,7 +67,7 @@ export class EnquiryService {
 
   }
   BindCmbCourses() {
-    this.httpClient.get(environment.apiUrl + "/api/course/getcourses")
+    this.httpClient.get(environment.apiUrl + "/api/course")
       .toPromise().then(response =>
         this.courses = response as Course[]
       );

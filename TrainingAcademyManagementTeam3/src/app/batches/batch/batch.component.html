@@ -31,7 +31,7 @@
 
         <label>Batch Strength</label>
 
-        <input name="BatchStrength" #BatchStrength="ngModel" [(ngModel)]="batservice.formData.BatchStrength"
+        <input type="number" name="BatchStrength" #BatchStrength="ngModel" [(ngModel)]="batservice.formData.BatchStrength"
             class="form-control" place holder="enter Batch Strength " minLength="2" maxLength="25" required
             [ngClass]="{'is invalid':BatchStrength.touched && BatchStrength.invalid}" />
 

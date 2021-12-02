@@ -15,13 +15,10 @@ export class ConfirmService {
   confirms:Confirm[];
   constructor(private httpClient:HttpClient) { }
 
-
-
-
 //insert user
 insertUser(confirm:Confirm):Observable<any>
 {
-  return this.httpClient.post(environment.apiUrl+"/api/lead/Adduser",confirm);
+  return this.httpClient.post(environment.apiUrl+"/api/register/Adduser",confirm);
 
 }
  }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-manager',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerComponent implements OnInit {
 
-  constructor() { }
+  loggedUserName: string;
+  constructor(private authService:AuthService,private router:Router ) { }
 
   ngOnInit(): void {
+    this.loggedUserName = localStorage.getItem("username");
   }
+  //logout
+  logOut(){
+    this.authService.logOut();
+    this.router.navigateByUrl('login');
+  }
+  
 
 }
+

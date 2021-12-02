@@ -1,7 +1,7 @@
 <h3>Enquiry</h3>
 <form name="renqform" #form="ngForm" autocomplete="nope" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
-        <label class="col-md-4">Resource Id</label>
+        <label class="col-md-4">Resource Name</label>
         <select name="ResourceId" id="ResourceId" class="form-control" #ResourceId="ngModel" required
             [(ngModel)]="renqService.formData.ResourceId">
             <option value=0 disabled>Choose Resource</option>
