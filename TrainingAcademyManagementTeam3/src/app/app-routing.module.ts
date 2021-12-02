@@ -28,6 +28,7 @@ import { CourseenquirylistComponent } from './courseenquiries/courseenquirylist/
 import{EditresourceenquiryComponent} from './resourceenquiries/editresourceenquiry/editresourceenquiry.component';
 import{EditcourseenquiryComponent} from './courseenquiries/editcourseenquiry/editcourseenquiry.component';
 import{CourseenquiriesComponent} from './courseenquiries/courseenquiries.component'
+import { ResourceenquiryviewComponent } from './manager/resourceenquiryview/resourceenquiryview.component';
 const routes: Routes = [
   { path: '',redirectTo:'/home', pathMatch:'full'},
   { path: 'login', component: LoginComponent },
@@ -62,7 +63,9 @@ const routes: Routes = [
   {path: 'resourceenquirylist', component: ResourceenquiryListComponent},//table
   {path: 'courseenquirylist', component: CourseenquirylistComponent},//table
   {path: 'resourceenquiries', component: ResourceenquiriesComponent},//coordinator side
-  {path: 'courseenquiries', component: CourseenquiriesComponent}//coordinator side
+  {path: 'courseenquiries', component: CourseenquiriesComponent},//coordinator side
+  {path:'managerresourceenquiryview', component: ResourceenquiryviewComponent},
+
 ];
 
 

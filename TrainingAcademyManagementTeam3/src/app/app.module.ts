@@ -43,7 +43,16 @@ import { BatchComponent } from './batches/batch/batch.component';
 import { BatchListComponent } from './batches/batch-list/batch-list.component';
 import { SalespipelinesComponent } from './salespipelines/salespipelines.component';
 import { SalespipelinelistManagerComponent } from './salespipelines/salespipelinelist-manager/salespipelinelist-manager.component';
-
+import { ResourceenquiryviewComponent } from './manager/resourceenquiryview/resourceenquiryview.component';
+import { ResourceenquiryviewService } from 'src/app/shared/resourceenquiryview.service';
+import { EditcourseenquiryComponent } from './courseenquiries/editcourseenquiry/editcourseenquiry.component';
+import { CourseenquirylistComponent } from './courseenquiries/courseenquirylist/courseenquirylist.component';
+import { CourseenquiryComponent } from './courseenquiries/courseenquiry/courseenquiry.component';
+import { CourseenquiriesComponent } from './courseenquiries/courseenquiries.component';
+import { EditresourceenquiryComponent } from './resourceenquiries/editresourceenquiry/editresourceenquiry.component';
+import { ResourceenquiryComponent } from './resourceenquiries/resourceenquiry/resourceenquiry.component';
+import { ResourceenquiryListComponent } from './resourceenquiries/resourceenquiry-list/resourceenquiry-list.component';
+import { ResourceenquiriesComponent } from './resourceenquiries/resourceenquiries.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +78,16 @@ import { SalespipelinelistManagerComponent } from './salespipelines/salespipelin
     BatchListComponent,
     SalespipelinesComponent,
     SalespipelinelistManagerComponent,
+    ResourceenquiryviewComponent,
+    CourseenquiriesComponent,
+    CourseenquiryComponent,
+    CourseenquirylistComponent,
+    EditcourseenquiryComponent,
+    ResourceenquiriesComponent,
+    ResourceenquiryListComponent,
+    ResourceenquiryComponent,
+    EditresourceenquiryComponent
+    
   
    
     
@@ -84,7 +103,7 @@ import { SalespipelinelistManagerComponent } from './salespipelines/salespipelin
     Ng2SearchPipeModule,
     ReactiveFormsModule
   ],
-  providers: [CourseService,ResourceService,ConfirmService,LeadService,AuthGuard,AuthService,
+  providers: [CourseService,ResourceService,ResourceenquiryviewService,ConfirmService,LeadService,AuthGuard,AuthService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass:AuthInterceptor,
