@@ -20,7 +20,14 @@ import { BatchListComponent } from './batches/batch-list/batch-list.component';
 import { BatchComponent } from './batches/batch/batch.component';
 import { BatchesComponent } from './batches/batches.component';
 import { SalespipelinelistManagerComponent } from './salespipelines/salespipelinelist-manager/salespipelinelist-manager.component';
-
+import { ResourceenquiriesComponent } from './resourceenquiries/resourceenquiries.component';
+import { ResourceenquiryListComponent } from './resourceenquiries/resourceenquiry-list/resourceenquiry-list.component';
+import { ResourceenquiryComponent } from './resourceenquiries/resourceenquiry/resourceenquiry.component';
+import { CourseenquiryComponent } from './courseenquiries/courseenquiry/courseenquiry.component';
+import { CourseenquirylistComponent } from './courseenquiries/courseenquirylist/courseenquirylist.component';
+import{EditresourceenquiryComponent} from './resourceenquiries/editresourceenquiry/editresourceenquiry.component';
+import{EditcourseenquiryComponent} from './courseenquiries/editcourseenquiry/editcourseenquiry.component';
+import{CourseenquiriesComponent} from './courseenquiries/courseenquiries.component'
 const routes: Routes = [
   { path: '',redirectTo:'/home', pathMatch:'full'},
   { path: 'login', component: LoginComponent },
@@ -49,8 +56,13 @@ const routes: Routes = [
   {path:'batchlist',component: BatchListComponent},
   {path:'batch/:batId', component: BatchComponent},
   {path:'batchlist/batch',component: BatchComponent},
-  {path:'salespipeline',component: SalespipelinelistManagerComponent }
-
+  {path:'salespipeline',component: SalespipelinelistManagerComponent },
+  {path: 'resourceenquiry', component: ResourceenquiryComponent},//lead side form
+  {path: 'courseenquiry', component: CourseenquiryComponent},//lead side form
+  {path: 'resourceenquirylist', component: ResourceenquiryListComponent},//table
+  {path: 'courseenquirylist', component: CourseenquirylistComponent},//table
+  {path: 'resourceenquiries', component: ResourceenquiriesComponent},//coordinator side
+  {path: 'courseenquiries', component: CourseenquiriesComponent}//coordinator side
 ];
 
 

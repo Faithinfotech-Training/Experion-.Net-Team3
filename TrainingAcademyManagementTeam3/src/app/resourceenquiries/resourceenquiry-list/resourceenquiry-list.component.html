@@ -1,0 +1,44 @@
+
+<div class="container">
+
+    <div class="header">
+        <h5>Enquiry</h5>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="search here..."
+            [(ngModel)]="filter">
+
+        </div>
+       
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Enquiry Id</th>
+                <th>Resource Id</th>
+                <th>Lead ID</th>
+                <th>Enquiry Status</th>
+                <th>Enquiry Date</th>
+                <th>Action</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let enq of renqService.resourceenquiries  | filter: filter | paginate:{itemsPerPage:5,currentPage:page}" >
+                <td (click)="populateForm(enq)">{{enq.ResourceEnquiryId}}</td>
+                <td (click)="populateForm(enq)">{{enq.ResourceId}}</td>
+                <td (click)="populateForm(enq)">{{enq.LeadId}}</td>
+                <td (click)="populateForm(enq)">{{enq.ResourceEnquiryStatus}}</td>
+                <td (click)="populateForm(enq)">{{enq.ReasourceEnquiryDate}}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-danger" (click)="deleteResourceEnquiry(enq.ResourceEnquiryId)">X</button>&nbsp;
+                    <button class="btn btn-sm btn-info" (click)="populateForm(enq)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div class="footer">
+       <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+    </div>
+    </div>
