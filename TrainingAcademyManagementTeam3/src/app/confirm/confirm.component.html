@@ -1,68 +1,45 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7829cf;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Geo Info Tech</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span
-          class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
-         
-        
-        </ul>
-      </div>
-    </div>
-  </nav>
-<form name="confirmform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
-    <!--Login id-->
-    <input type="hidden" name="LoginId" [ngModel]="conService.formData.LoginId" />
+<section class="ftco-section bg-light ftco-bread">
+  <div class="container">
+    <h1 class="mb-3 bread">Sign Up</h1>
+    <p class="shopping-idea">Register a new account.</p>
+  </div>
+</section>
+<!-- Start main body Area -->
+<section class="ftco-section-bottom bg-light">
+  <div class="container">
+    <form name="confirmform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+      <div class="next-round-login">
 
-    <!--Role id-->
-    <input type="hidden" name="RoleId" [ngModel]="conService.formData.RoleId" />
+        <!--Login id-->
+        <input type="hidden" name="LoginId" [ngModel]="conService.formData.LoginId" />
 
+        <!--Role id-->
+        <input type="hidden" name="RoleId" [ngModel]="conService.formData.RoleId" />
 
-    <!--UserName-->
-    <div class="form-group">
-
-        <label>UserName</label>
-        <input name="UserName" #UserName="ngModel" [ngModel]="conService.formData.UserName"
-            class="form-control" placeholder="Enter full name" minlength="2" maxlength="25" required
-            [ngClass]="{'is-invalid':UserName.touched && UserName.invalid}" />
+        <!--Username-->
+        <input name="UserName" #UserName="ngModel" [ngModel]="conService.formData.UserName" class="form-control"
+          placeholder="Enter new username" minlength="2" maxlength="25" required
+          [ngClass]="{'is-invalid':UserName.touched && UserName.invalid}" />
         <div class="validation-error" *ngIf="UserName.touched && UserName.invalid">
-
-            <div *ngIf="UserName.errors.required">
-                UserName is required</div>
+          <div *ngIf="UserName.errors.required">
+            <p class="shopping-idea-1">Username is required</p>
+          </div>
         </div>
-    </div>
 
+        <!--Password-->
+        <input type="password" name="UserPassword" #UserPassword="ngModel" [ngModel]="conService.formData.UserPassword"
+          class="form-control" placeholder="Enter new password" minlength="6" maxlength="25" required
+          [ngClass]="{'is-invalid':UserPassword.touched && UserPassword.invalid}" />
+        <div class="validation-error" *ngIf="UserPassword.touched && UserPassword.invalid">
+          <div *ngIf="UserPassword.errors.required">
+            <p class="shopping-idea-1">Password is required</p>
+          </div>
+        </div>
+        <input style="display: none" type="number" name="RoleId" #RoleId="ngModel"
+          [ngModel]="conService.formData.RoleId">
 
-
- <!--Confirm Password-->
- <div class="form-group">
-
-    <label>Confirm Password</label>
-    <input type ="password" name ="UserPassword" #UserPassword="ngModel" [ngModel]="conService.formData.UserPassword"
-        class="form-control" placeholder="Enter Password" minlength="6" maxlength="25" required
-        [ngClass]="{'is-invalid':UserPassword.touched && UserPassword.invalid}" />
-    <div class="validation-error" *ngIf="UserPassword.touched && UserPassword.invalid">
-
-        <div *ngIf="UserPassword.errors.required">
-            Confirm Password is required</div>
-    </div>
-</div>
-<input style="display: none" type="number" name="RoleId" #RoleId="ngModel" [ngModel]="conService.formData.RoleId">
-
-
-
-   
-    <!--submit button-->
-    <br>
-    <div class="form-group">
-        <button type="submit" [disabled]="!(form.valid && form.dirty)"
-            class="btn btn-lg btn-primary form-control">Submit</button>
-    </div>
-
-
-</form>
-
-
+      </div>
+      <button type="submit" [disabled]="!(form.valid && form.dirty)" class="button-login">Register</button>
+    </form>
+  </div>
+</section>

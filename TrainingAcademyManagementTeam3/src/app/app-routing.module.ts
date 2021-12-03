@@ -32,14 +32,11 @@ import { ResourceenquiryviewComponent } from './manager/resourceenquiryview/reso
 import { CourseenquiryviewComponent } from './manager/courseenquiryview/courseenquiryview.component';
 import { CourseindividualviewComponent } from './courses/courseindividualview/courseindividualview.component';
 import { ResourceindividualviewComponent } from './resources/resourceindividualview/resourceindividualview.component';
-<<<<<<< HEAD
+
 import {CoordinatorComponent} from './coordinator/coordinator.component'
 import {LeadviewComponent} from './leadview/leadview.component'
-=======
 
 
-
->>>>>>> 0a83f2e6fd49cacf82640121def8cae2b2d0d901
 const routes: Routes = [
   { path: '',redirectTo:'/home', pathMatch:'full'},
   { path: 'login', component: LoginComponent },
