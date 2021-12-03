@@ -54,6 +54,7 @@ export class ResourceenquiryComponent implements OnInit {
       console.log("Updating a record..");
       this.UpdateResourceEnquiryRecord(form);
     }
+    this.router.navigateByUrl('/leadview');
   }
   resetForm(form?:NgForm){
     if(form != null){

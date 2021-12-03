@@ -49,6 +49,7 @@ courseenquiry:Courseenquiry=new Courseenquiry();
       console.log("Updating a record..");
       this.UpdateCourseEnquiryRecord(form);
     }
+    this.router.navigateByUrl('/leadview');
   }
   resetForm(form?:NgForm){
     if(form != null){

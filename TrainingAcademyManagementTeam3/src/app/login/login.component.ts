@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("username", this.jwtResponse.UserName);
           localStorage.setItem("ACCESS_ROLE", this.jwtResponse.RoleId.toString());
           sessionStorage.setItem("username", this.jwtResponse.UserName);
-          this.router.navigateByUrl('/co-ordinator');
+          this.router.navigateByUrl('/coordinator');
         }
         else if (this.jwtResponse.RoleId === 4) {
           //logged as lead
@@ -90,7 +90,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("ACCESS_ROLE", this.jwtResponse.RoleId.toString());
           sessionStorage.setItem("username", this.jwtResponse.UserName);
           sessionStorage.setItem("LoginId", this.jwtResponse.LoginId);
-          this.router.navigateByUrl('/leadView');
+          this.router.navigateByUrl('/leadview');
         }
         else {
           this.error = "sorry.. Invalid authorized role..This module is not authorized"
