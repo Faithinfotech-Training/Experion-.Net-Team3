@@ -1,345 +1,106 @@
 body {
-
-    color: #000;
-
-    overflow-x: hidden;
-
-    height: 100%;
-
-    background-image: linear-gradient(to right, #66e0ff, #fff);
-
-    background-repeat: no-repeat
-
+    font-family: "Montserrat", Arial, sans-serif;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 500;
+    color: #999999; 
 }
 
-
-
-input,
-
-textarea {
-
-    background-color: #e6faff;
-
-    border-radius: 50px !important;
-
-    padding: 12px 15px 12px 15px !important;
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-    border: none !important;
-
-    border: 1px solid #e6faff !important;
-
-    font-size: 16px !important;
-
-    color: #000 !important;
-
-    font-weight: 400
-
+.bg-light {
+    background: #f8f9fa !important;
 }
-
-
-
-input:focus,
-
-textarea:focus {
-
-    -moz-box-shadow: none !important;
-
+.ftco-section {
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    position: relative;
+}
+.ftco-bread .bread {
+    font-weight: 700;
+    color: #000000;
+}
+.shopping-idea {
+    color: dimgrey;
+    font-size: 20px;
+}
+.next-round-login{
+    padding-bottom: 1em;
+}
+.next-round-login input {
+    border-radius: 25px;
+    width: 40%;
+}
+.form-control {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    height: auto;
+    padding: 12px 20px;
+    height: 52px !important;
+    background: #fff !important;
+    color: #856868 !important;
+    font-size: 18px;
+    border-radius: 0px;
     -webkit-box-shadow: none !important;
-
     box-shadow: none !important;
-
-    border: 1px solid #66e0ff !important;
-
-    outline-width: 0;
-
-    font-weight: 400
-
 }
-
-button:focus {
-
-    -moz-box-shadow: none !important;
-
-    -webkit-box-shadow: none !important;
-
-    box-shadow: none !important;
-
-    outline-width: 0
-
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
-
-
-
-.card {
-
-    border-radius: 0;
-
-    border: none
-
-}
-
-.card1 {
-
-    width: 50%;
-
-    padding: 40px 30px 10px 30px
-
-}
-
-
-
-
-
-
-.heading {
-
-    margin-bottom: 60px !important
-
-}
-
-
-
-::placeholder {
-
-    color: #000 !important;
-
-    opacity: 1
-
-}
-
-
-
-:-ms-input-placeholder {
-
-    color: #000 !important
-
-}
-
-
-
-::-ms-input-placeholder {
-
-    color: #000 !important
-
-}
-.form-control-label {
-
-    font-size: 12px;
-
-    margin-left: 15px
-
-}
-
-
-
-.msg-info {
-
-    padding-left: 15px;
-
-    margin-bottom: 30px
-
-}
-
-
-
-.btn-color {
-
+.button-login {
+    display: inline-block;
+    margin-bottom: 1em;
+    padding: 8px 30px;
     border-radius: 50px;
+    color: #ffffff;
+    background-color: #7829cf;
+    transition: 0.3s;
+    border: none;
+}
+.button-login.white,
+.button-login:hover {
+    background-color: #f92d97;
+    color: #ffffff;
+}
+.shopping-idea-1{
+    text-decoration: none;
+    color: red;
+    padding-left: 1.25em;
+}
+.shopping-idea-2 {
+    color: dimgrey;
+    font-size: 1.05em;
+    margin-bottom: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.shopping-idea-2 a{
+    text-decoration: none;
+    color: #f67e7d;
+}
 
-    color: black;
-    font-weight: bold;
+/* Big tablet to 1200px (widths smaller taht the 1140px row) */
+@media only screen and (max-width: 1200px) {
+    .next-round-login input{ width: 50%; }
+}
 
-    background-image: linear-gradient(to right, #fff, #66e0ff);
 
-    padding: 15px;
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+    .next-round-login input{ width: 60%; }
+}
 
-    cursor: pointer;
-
-    border: none !important;
-
-    margin-top: 40px
-
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+     .next-round-login input{ width: 100%; }
 }
 
 
 
-.btn-color:hover {
-
-    color: #fff;
-
-    background-image: linear-gradient(to right, #66e0ff, #fff)
-
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+    .next-round-login input{ width: 100%; }
+    
 }
-.btn-white {
-
-    border-radius: 50px;
-
-    color: #66e0ff;
-
-    background-color: #fff;
-
-    padding: 8px 40px;
-
-    cursor: pointer;
-
-    border: 2px solid #66e0ff!important
-
-}
-
-
-
-.btn-white:hover {
-
-    color: #fff;
-
-    background-image: linear-gradient(to right, #fff, #66e0ff)
-
-}
-
-
-
-a {
-
-    color: #000
-
-}
-
-
-
-a:hover {
-
-    color: #000
-
-}
-
-
-
-.bottom {
-
-    width: 100%;
-
-    margin-top: 50px !important
-
-}
-
-
-
-.sm-text {
-
-    font-size: 15px
-
-}
-
-
-
-@media screen and (max-width: 992px) {
-
-    .card1 {
-
-        width: 100%;
-
-        padding: 40px 30px 10px 30px
-
-    }
-
-
-
-    .card2 {
-
-        width: 100%
-
-    }
-
-
-
-    .right {
-
-        margin-top: 100px !important;
-
-        margin-bottom: 100px !important
-
-    }
-
-}
-
-
-
-
-.card1 {
-
-    width: 50%;
-
-    padding: 40px 30px 10px 30px
-
-}
-
-
-
-
-
-
-.heading {
-
-    margin-bottom: 60px !important
-
-}
-
-
-
-::placeholder {
-
-    color: #000 !important;
-
-    opacity: 1
-
-}
-
-
-
-:-ms-input-placeholder {
-
-    color: #000 !important
-
-}
-
-
-
-::-ms-input-placeholder {
-
-    color: #000 !important
-
-}
-
-
-@media screen and (max-width: 768px) {
-
-    .container {
-
-        padding: 10px !important
-
-    }
-
-
-
-    .card2 {
-
-        padding: 50px
-
-    }
-
-
-
-    .right {
-
-        margin-top: 50px !important;
-
-        margin-bottom: 50px !important
-
-    }
-
-}
-

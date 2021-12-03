@@ -31,6 +31,8 @@ import{CourseenquiriesComponent} from './courseenquiries/courseenquiries.compone
 import { ResourceenquiryviewComponent } from './manager/resourceenquiryview/resourceenquiryview.component';
 import { CourseenquiryviewComponent } from './manager/courseenquiryview/courseenquiryview.component';
 import { CourseindividualviewComponent } from './courses/courseindividualview/courseindividualview.component';
+import { ResourceindividualviewComponent } from './resources/resourceindividualview/resourceindividualview.component';
+
 
 
 const routes: Routes = [
@@ -72,7 +74,8 @@ const routes: Routes = [
   {path:'editcourseenquirystatus', component: EditcourseenquiryComponent},
   {path :'managercourseenquiryview',component:CourseenquiryviewComponent},
   {path:'editresourceenquirystatus', component: EditresourceenquiryComponent},
-  {path:'courseindividualview/:corId', component: CourseindividualviewComponent}
+  {path:'courseindividualview/:corId', component: CourseindividualviewComponent},
+  {path:'resourceindividualview/:resId', component: ResourceindividualviewComponent}
 
 ];
 

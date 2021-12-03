@@ -16,7 +16,7 @@ header {
     
     width: 100%;
     padding-top: 10%;
-    padding-left: 10%;
+    padding-left: 8%;
 }
 
 /* ----- BUTTONS ----- */
@@ -63,4 +63,3 @@ input[type=submit]:active {
     border: 1px solid #7829cf;
     color: #fff;
 }
-

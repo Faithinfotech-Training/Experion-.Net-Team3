@@ -1,11 +1,21 @@
 /*----header----*/
 .navbar-light .navbar-nav .nav-link{
-    color: white;
+  color: white;
 }
 .navbar-light .navbar-brand{
-    color: white;
-    font-weight: 500;
+  color: white;
+  font-weight: 500;
 }
+
+/*----footer-----*/
+footer {
+  font-size: 1.1em;
+  color: white;
+  background: #7829CF;
+  background: linear-gradient(to right, #7829CF, #F92D97);
+  padding: 4em ; 
+}
+
 .dropdown .dropbtn {
     font-size: 16px;
     border: none;
@@ -46,12 +56,3 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
-/*----footer-----*/
-/*footer {
-    font-size: 20px;
-    color: white;
-    
-    background: #7829CF;
-    background: linear-gradient(to right, #7829CF, #F92D97);
-    padding: 4em 10px; 
-}*/

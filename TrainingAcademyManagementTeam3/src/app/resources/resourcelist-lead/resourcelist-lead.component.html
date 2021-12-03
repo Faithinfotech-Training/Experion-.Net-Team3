@@ -1,16 +1,34 @@
+<div class="container">
+    <div class="header">
+        <h5>Resource Details</h5>
+        <!--Search functionality-->
+        <div class="form-group">
+            <input class="form-control" type="text"
+            placeholder="Search here..." [(ngModel)]="filter"> 
+
+        </div>
+      <br>
+     
+    </div>
+
+
 <div class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4" (ngModel)="filter">
     <div class="row">
-        <div class="col-3" *ngFor="let crs of resourceService.resources">
+        <div class="col-3" *ngFor="let crs of resourceService.resources |filter: filter |paginate:{itemsPerPage:4, currentPage: page}" >
             <div class="card" style="width: 18rem;">
-                <a href="./courselist"><img class="card-img-top"
+                <a href=""><img class="card-img-top"
                         src="http://www.wiu.edu/cbt/images/CbtHomeResourcesFeb2018.jpg" alt="Card image cap"></a>
                 <div class="card-body">
                     <h5 class="card-title">{{crs.ResourceName}}</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="{{'./resourceindividualview/'+crs.ResourceId}}" class="btn btn-primary" >Vie Details</a>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        <!--Pagination-->
+        <pagination-controls (pageChange)="page=($event)"></pagination-controls>
     </div>
 </div>

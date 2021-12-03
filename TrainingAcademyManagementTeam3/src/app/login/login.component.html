@@ -1,64 +1,38 @@
-<div class="container px-4 py-5 mx-auto">
-    <div class="card card0">
-        <div class="d-flex flex-lg-row flex-column-reverse">
-            <div class="card card1">
-                <div class="row justify-content-center my-auto">
-                    <div class="col-md-8 col-10 my-5">
-                       
-                        <h3 class="mb-5 text-center heading">We are GeoInfoTech</h3>
-                        <h6 class="msg-info">Please login to your account</h6>
-                        <form [formGroup]="loginForm" (ngSubmit)="loginCredentials()">
-                            <!--Username-->
-                            <div>
-                                <input type="text" placeholder="Enter the user name" formControlName="UserName" autocomplete="off"
-                                    required />
-                            </div>
-                            <div *ngIf="isSubmitted && formControls.UserName.errors">
-                                <div *ngIf="formControls.UserName.errors.required" style="color:red;text-align:left ;">
-                                    Username is required
-                                </div>
-                
-                            </div>
-                            <!--Userpassword-->
-                            <br>
-                            <div>
-                                <input type="password" placeholder="Enter the userpassword" formControlName="UserPassword"
-                                    autocomplete="off" required />
-                            </div>
-                            <div *ngIf="isSubmitted && formControls.UserPassword.errors">
-                                <div *ngIf="formControls.UserPassword.errors.required" style="color:red;text-align:left ;">
-                                    User Password is required
-                                </div>
-                
-                            </div>
-                            <br>
-                            <div class="row justify-content-center my-3 px-3">  <button class="btn-block btn-color">
-                                Login
-                            </button> </div>
-                
-                            
-                            <div *ngIf=" error" style="color: red; text-align: left;">
-                
-                                {{error}}
-                            </div>
-                
-                
-                
-                
-                
-                        </form>
-                        
-                        <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted">Forgot Password?</small></a> </div>
+<section class="ftco-section bg-light ftco-bread">
+    <div class="container">
+        <h1 class="mb-3 bread">Login</h1>
+        <p class="shopping-idea">Login to your account.</p>
+    </div>
+</section>
+<!-- Start main body Area -->
+<section class="ftco-section bg-light">
+    <div class="container">
+        <form [formGroup]="loginForm" (ngSubmit)="loginCredentials()">
+            <div class="next-round-login">
+                <!--Username-->
+                <input type="text" class="form-control" placeholder="Enter the user name" formControlName="UserName"
+                    autocomplete="off" required />
+                <div *ngIf="isSubmitted && formControls.UserName.errors">
+                    <div *ngIf="formControls.UserName.errors.required">
+                        <p class="shopping-idea-1">Username is required</p>
                     </div>
                 </div>
-                <div class="bottom text-center mb-5">
-                    <p href="#" class="sm-text mx-auto mb-3">Don't have an account?<button class="btn btn-white ml-2">Register</button></p>
+                <!--Password-->
+                <input type="password" class="form-control" placeholder="Enter the userpassword"
+                    formControlName="UserPassword" autocomplete="off" required />
+                <div *ngIf="isSubmitted && formControls.UserPassword.errors">
+                    <div *ngIf="formControls.UserPassword.errors.required">
+                        <p class="shopping-idea-1">Password is required</p>
+                    </div>
                 </div>
             </div>
-            
-        </div>
+            <button type="submit" class="button-login">Login</button>
+            <div *ngIf=" error">
+                <p class="shopping-idea-1">Wrong username or password</p>
+            </div>
+        </form>
+        <p class="shopping-idea-2">Don't have an account yet. <a href="#">Create one now !</a>
+            <br><a href="#">Having trouble ?</a>
+        </p>
     </div>
-</div>
-
-
-
+</section>

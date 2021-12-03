@@ -11,6 +11,7 @@ export class ResourceService {
 
   //create an instance of course
   formData:Resource=new Resource();
+  cardData:Resource=new Resource();
   
   resources: Resource[];
 

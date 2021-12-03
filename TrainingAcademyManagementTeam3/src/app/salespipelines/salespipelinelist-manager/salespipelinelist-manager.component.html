@@ -24,7 +24,7 @@
      <tbody>
          <tr *ngFor="let crs of salespipelineService.salespipelines  |filter: filter |paginate:{itemsPerPage:2, currentPage: page}" >
              <td>{{crs.SalesPipelineId}}</td>
-             <td>{{ showLead(crs.LeadId) }}</td>
+             <td>{{crs.LeadId}}</td>
              <td>{{crs.Stage}}</td>
              <td>{{crs.Priority}}</td>
              <td>{{crs.CloseDate}}</td>
