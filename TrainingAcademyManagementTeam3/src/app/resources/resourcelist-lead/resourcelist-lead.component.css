@@ -4,3 +4,6 @@ h5{
     color:black;
     text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc;
 }
+.row {
+    --bs-gutter-y: 1rem;
+}
