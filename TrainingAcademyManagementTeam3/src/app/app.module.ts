@@ -60,6 +60,8 @@ import { CourseindividualviewComponent } from './courses/courseindividualview/co
 import { ResourceindividualviewComponent } from './resources/resourceindividualview/resourceindividualview.component';
 import { CoordinatorComponent } from './coordinator/coordinator.component';
 import { LeadviewComponent } from './leadview/leadview.component';
+import { ChartsModule } from 'ng2-charts';
+import { CorenqchartComponent } from './charts/corenqchart/corenqchart.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +101,7 @@ import { LeadviewComponent } from './leadview/leadview.component';
     CoordinatorComponent,
     LeadviewComponent,
     CourseindividualviewComponent,
+    CorenqchartComponent
    
 
   ],
@@ -111,7 +114,8 @@ import { LeadviewComponent } from './leadview/leadview.component';
     ToastrModule.forRoot(),
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [CourseService, ResourceService, ResourceenquiryviewService, ConfirmService, LeadService, AuthGuard, AuthService, CourseenquiryviewService,
     {
