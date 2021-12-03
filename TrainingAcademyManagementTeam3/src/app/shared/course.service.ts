@@ -12,6 +12,7 @@ export class CourseService {
 
   //create an instance of course
   formData:Course=new Course();
+  cardData:Course=new Course();
   
   courses: Course[];
 

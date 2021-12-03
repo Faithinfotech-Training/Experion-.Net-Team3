@@ -12,16 +12,16 @@ import { Course } from 'src/app/shared/course';
 })
 export class CourselistLeadComponent implements OnInit {
 
-  page:number=1;
-  filter:string;
-    constructor(public courseService:CourseService,private toastrService:ToastrService,private router :Router) { }
-  
-    ngOnInit(): void {
-      this.courseService.bindListCourses();
-    }
-  
-  
-    
-    }
-    
-  
+  page: number = 1;
+  filter: string;
+  constructor(public courseService: CourseService, private toastrService: ToastrService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.courseService.bindListCourses();
+
+   }
+
+   
+}
+
+

@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7829cf;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Geo Info Tech</a>
@@ -13,45 +14,41 @@
       </div>
     </div>
   </nav>
-<div class="container">
-    <div class="header">
-        <h5>Course Details</h5>
-        <!--Search functionality-->
-        <div class="form-group">
-            <input class="form-control" type="text"
-            placeholder="Search here..." [(ngModel)]="filter"> 
 
+<div class="container">   
+
+    <div class="header">       
+        <h5>Course Details</h5>       
+        <!--Search functionality-->       
+        <div class="form-group">           
+            <input class="form-control" type="text"             placeholder="Search here..." [(ngModel)]="filter">      
+             
+        </div>     
+        <br>        
+    </div>
+    <div class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4" (ngModel)="filter">   
+        <div class="row">       
+            <div class="col-3"
+                *ngFor="let crs of courseService.courses |filter: filter | paginate:{itemsPerPage:4, currentPage: page}">
+                            <div class="card" style="width: 18rem;">               
+                    <a href=""><img class="card-img-top"                        
+                            src="http://www.wiu.edu/cbt/images/CbtHomeResourcesFeb2018.jpg" alt="Card image cap"></a>   
+                               
+                    <div class="card-body">                 
+
+                        <h5 class="card-title">{{crs.CourseName}}</h5>                   
+                        <p class="card-text">Some
+                            quick example text to build on the card title and make up the bulk of the                   
+                                card's content.</p>                   
+                        <a href="{{'./courseindividualview/'+crs.CourseId}}" class="btn btn-primary">
+                            View
+                            Details</a>               
+                    </div>           
+                </div>       
+            </div>   
+        </div>   
+        <div class="footer">       
+            <!--Pagination-->       
+            <pagination-controls (pageChange)="page=($event)"></pagination-controls>   
         </div>
-      <br>
-     
     </div>
-    <table class="table table-bordered table-striped">
-     <thead>
-         <tr>
-             <th>Course Id</th>
-             <th>Course Name</th>
-             <th>CourseFees</th>
-             <th>CourseDescription</th>
-             <th>IsActive</th>
-            
-         </tr>
-     </thead>
-     <tbody>
-         <tr *ngFor="let crs of courseService.courses  |filter: filter |paginate:{itemsPerPage:2, currentPage: page}" >
-             <td>{{crs.CourseId}}</td>
-             <td>{{crs.CourseName}}</td>
-             <td>{{crs.CourseFees}}</td>
-             <td>{{crs.CourseDescription}}</td>
-             <td>{{crs.IsActive}}</td>
-            
-         </tr>
-     </tbody>
-    </table>
-    <div class="footer">
-        <!--Pagination-->
-        <pagination-controls (pageChange)="page=($event)"></pagination-controls>
-    </div>
-
-</div>
-    
-

@@ -56,6 +56,7 @@ import { ResourceenquiriesComponent } from './resourceenquiries/resourceenquirie
 
 import { CourseenquiryviewComponent } from './manager/courseenquiryview/courseenquiryview.component';
 import { CourseenquiryviewService } from './shared/courseenquiryview.service';
+import { CourseindividualviewComponent } from './courses/courseindividualview/courseindividualview.component';
 import { ResourceindividualviewComponent } from './resources/resourceindividualview/resourceindividualview.component';
 import { CoordinatorComponent } from './coordinator/coordinator.component';
 import { LeadviewComponent } from './leadview/leadview.component';
@@ -96,7 +97,9 @@ import { LeadviewComponent } from './leadview/leadview.component';
     CourseenquiryviewComponent,
     ResourceindividualviewComponent,
     CoordinatorComponent,
-    LeadviewComponent
+    LeadviewComponent,
+    CourseindividualviewComponent,
+   
 
   ],
   imports: [
