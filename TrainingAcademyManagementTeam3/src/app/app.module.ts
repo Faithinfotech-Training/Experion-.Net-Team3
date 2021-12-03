@@ -56,6 +56,7 @@ import { ResourceenquiriesComponent } from './resourceenquiries/resourceenquirie
 
 import { CourseenquiryviewComponent } from './manager/courseenquiryview/courseenquiryview.component';
 import { CourseenquiryviewService } from './shared/courseenquiryview.service';
+import { ResourceindividualviewComponent } from './resources/resourceindividualview/resourceindividualview.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { CourseenquiryviewService } from './shared/courseenquiryview.service';
     ResourceenquiryListComponent,
     ResourceenquiryComponent,
     EditresourceenquiryComponent,
-    CourseenquiryviewComponent
+    CourseenquiryviewComponent,
+    ResourceindividualviewComponent
 
   ],
   imports: [

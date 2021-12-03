@@ -30,6 +30,7 @@ import{EditcourseenquiryComponent} from './courseenquiries/editcourseenquiry/edi
 import{CourseenquiriesComponent} from './courseenquiries/courseenquiries.component'
 import { ResourceenquiryviewComponent } from './manager/resourceenquiryview/resourceenquiryview.component';
 import { CourseenquiryviewComponent } from './manager/courseenquiryview/courseenquiryview.component';
+import { ResourceindividualviewComponent } from './resources/resourceindividualview/resourceindividualview.component';
 const routes: Routes = [
   { path: '',redirectTo:'/home', pathMatch:'full'},
   { path: 'login', component: LoginComponent },
@@ -69,6 +70,7 @@ const routes: Routes = [
   {path:'editcourseenquirystatus', component: EditcourseenquiryComponent},
   {path :'managercourseenquiryview',component:CourseenquiryviewComponent},
   {path:'editresourceenquirystatus', component: EditresourceenquiryComponent},
+  {path:'resourceindividualview/:resId', component: ResourceindividualviewComponent}
 
 ];
 

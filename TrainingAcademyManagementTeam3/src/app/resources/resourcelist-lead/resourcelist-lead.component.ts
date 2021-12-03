@@ -12,7 +12,7 @@ import { ResourceService } from 'src/app/shared/resource.service';
 export class ResourcelistLeadComponent implements OnInit {
 
   page:number=1;
-filter:string;
+  filter:string;
   constructor(public resourceService:ResourceService,private toastrService:ToastrService,private router :Router) { }
 
   ngOnInit(): void {
