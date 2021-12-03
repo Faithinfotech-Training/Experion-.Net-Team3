@@ -46,14 +46,18 @@ export class ConfirmComponent implements OnInit {
   //insert user
   insertUser(form?: NgForm) {
     console.log("inserting User...")
+    console.log(form.value)
+    form.value.RoleId=4;
     this.conService.insertUser(form.value).subscribe(
       (result) => {
         console.log("result" + result);
         this.resetform(form);
+        sessionStorage.setItem("LoginId",result.toString())
         this.toxterService.success('Registration Successfully completed');
       }
     );
-    this.router.navigate(['/home'])
+    
+    this.router.navigate(['/lead'])
 
   }
 

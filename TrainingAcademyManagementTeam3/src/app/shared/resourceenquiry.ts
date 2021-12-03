@@ -4,4 +4,5 @@ export class Resourceenquiry {
     LeadId:Number=0;
     ResourceEnquiryStatus:String='';
     ResourceEnquiryDate:Date=new Date;
+    EnquiryDescription:string='';
 }

@@ -76,18 +76,19 @@ export class LeadComponent implements OnInit {
       //insert
       insertLeadRecord(form?:NgForm){
         console.log("inserting a record...");
+        form.value.LeadId=Number(sessionStorage.getItem("LoginId"));
         this.leadService.insertLead(form.value).subscribe
         ((result)=>
         {
           console.log(result);
-          sessionStorage.setItem("LeadId",result.toString());
+          
           this.resetform(form);
           this.toastrService.success('Personal Details successfully inserted');
          
         }
         );
         window.alert("Personal Details successfully inserted");
-        this.router.navigate(['/confirm'])
+       
       }
     
         //update

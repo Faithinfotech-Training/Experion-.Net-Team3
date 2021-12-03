@@ -4,4 +4,5 @@ export class Courseenquiry {
     LeadId:Number;
     CourseEnquiryStatus:String;
     CourseEnquiryDate:Date;
+    EnquiryDescription:string='';
 }

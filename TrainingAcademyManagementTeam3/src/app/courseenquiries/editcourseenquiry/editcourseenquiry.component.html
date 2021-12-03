@@ -2,7 +2,10 @@
     <label for="CourseEnquiryId">CourseEnquiryId</label> <input type="" name="CourseEnquiryId"
         [ngModel]="cenqService.formData2.CourseEnquiryId" class="form-control" placeholder="Enter full name"
         minlength="10" maxlength="25" required />
-
+<br>
+<label for="EnquiryDescription">Your Enquiry</label>
+<textarea name="EnquiryDescription" id="EnquiryDescription" class="form-control" #EnquiryDescription="ngModel" 
+[(ngModel)]="cenqService.formData2.EnquiryDescription"></textarea><br>
     <label for="CourseEnquiryStatus">CourseEnquiryStatus</label>
     <!-- <input type="" name="CourseEnquiryStatus" [ngModel]="cenqService.formData2.CourseEnquiryStatus"class="form-control" placeholder=""/>-->
 

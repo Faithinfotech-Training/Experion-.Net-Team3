@@ -21,7 +21,7 @@ export class LeadService {//create an instance of lead
 
   //insert lead
   insertLead(lead:Lead):Observable<any>{
-    return this.httpClient.post(environment.apiUrl+"/api/lead",lead)
+    return this.httpClient.post(environment.apiUrl+"/api/lead/addlead",lead)
   }
 
   //update lead

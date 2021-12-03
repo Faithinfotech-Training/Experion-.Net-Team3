@@ -2,7 +2,10 @@
 <form name="editform" #form="ngForm" (ngSubmit)="onSubmit(form)">
    <label for="ResourceEnquiryId">ResourceEnquiryId</label> <input type="" name="ResourceEnquiryId" [ngModel]="renqService.formData.ResourceEnquiryId"class="form-control" placeholder="Enter full name" minlength="10" maxlength="25" required
     />
-
+    <label for="EnquiryDescription">Enquiry</label>
+    <textarea name="EnquiryDescription" id="EnquiryDescription" class="form-control" #EnquiryDescription="ngModel" 
+    [(ngModel)]="renqService.formData.EnquiryDescription"></textarea>
+<br>
     <label for="ResourceEnquiryStatus">ResourceEnquiryStatus</label> 
     <select   name="ResourceEnquiryStatus" id="ResourceEnquiryStatus" class="form-control" #ResourceEnquiryStatus="ngModel" required
     [(ngModel)]="renqService.formData.ResourceEnquiryStatus">
@@ -21,9 +24,10 @@
 
 
         </select>
-        <label>Lead Id</label>
-        <input   type="" name="LeadId" [ngModel]="renqService.formData.LeadId"class="form-control" placeholder="Enter full name" minlength="10" maxlength="25" required
+        
+        <input style="display:none"  type="" name="LeadId" [ngModel]="renqService.formData.LeadId"class="form-control" placeholder="Enter full name" minlength="10" maxlength="25" required
     />
+    
         <input style="display: none;"  type="date" name="ResourceEnquiryDate" #ResourceEnquiryDate="ngModel" [(ngModel)]="renqService.formData.ResourceEnquiryDate"
         class="form-control"  [ngClass]="{ 'is-invalid': ResourceEnquiryDate.touched
              && ResourceEnquiryDate.invalid }" />

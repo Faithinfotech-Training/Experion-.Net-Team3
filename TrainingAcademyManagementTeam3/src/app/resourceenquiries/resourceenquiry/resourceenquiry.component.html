@@ -14,7 +14,10 @@
             <div *ngIf="ResourceId.errors.required">
                 Resource Id is required</div>
         </div>
-    </div><br><br>
+    </div><br>
+    <label for="EnquiryDescription">Your Enquiry</label>
+    <textarea name="EnquiryDescription" id="EnquiryDescription" class="form-control" #EnquiryDescription="ngModel" required
+    [(ngModel)]="renqService.formData.EnquiryDescription"></textarea><br><br>
     <!--<input style="display: none;" name="LeadId" #LeadId="ngModel" [ngModel]="renqService.formData.LeadId"
             class="form-control" placeholder="" 
             [ngClass]="{'is-invalid':LeadId.touched && LeadId.invalid}" />-->

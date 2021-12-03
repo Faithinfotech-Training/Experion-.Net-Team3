@@ -17,7 +17,7 @@
                 <th>Course Id</th>
                 <th>Lead ID</th>
                 <th>Enquiry Status</th>
-                <th>Enquiry Date</th>
+               
                 <th>Action</th>
                 
 
@@ -29,7 +29,7 @@
                 <td (click)="populateForm(enq)">{{enq.CourseId}}</td>
                 <td (click)="populateForm(enq)">{{enq.LeadId}}</td>
                 <td (click)="populateForm(enq)">{{enq.CourseEnquiryStatus}}</td>
-                <td (click)="populateForm(enq)">{{enq.CourseEnquiryDate | date:'dd-MM-yyyy'}}</td>
+                <td style="display: none;" (click)="populateForm(enq)">{{enq.CourseEnquiryDate | date:'dd-MM-yyyy'}}</td>
                 <td>
                     <button class="btn btn-sm btn-outline-danger" (click)="deleteCourseEnquiry(enq.CourseEnquiryId)">X</button>&nbsp;
                     <button class="btn btn-sm btn-info" (click)="populateForm(enq)">Edit</button>
