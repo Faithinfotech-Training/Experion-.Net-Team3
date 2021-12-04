@@ -10,7 +10,7 @@
          
           <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
           
-          <li class="nav-item"><a class="nav-link" href="/confirm">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="/confirm">Sign Up</a></li>
         </ul>
       </div>
     </div>
@@ -31,7 +31,7 @@
                     autocomplete="off" required />
                 <div *ngIf="isSubmitted && formControls.UserName.errors">
                     <div *ngIf="formControls.UserName.errors.required">
-                        <p class="shopping-idea-1">Username is required</p>
+                        <p class="shopping-idea-1">User name is required</p>
                     </div>
                 </div>
                 <!--Password-->
@@ -48,8 +48,8 @@
                 <p class="shopping-idea-1">Wrong username or password</p>
             </div>
         </form>
-        <p class="shopping-idea-2">Don't have an account yet. <a href="#">Create one now !</a>
-            <br><a href="#">Having trouble ?</a>
+        <p class="shopping-idea-2">Don't have an account yet. <a href="/lead">Create one now !</a>
+          
         </p>
     </div>
 </section>
