@@ -63,6 +63,8 @@ import { LeadviewComponent } from './leadview/leadview.component';
 import { ChartsModule } from 'ng2-charts';
 import { CorenqchartComponent } from './charts/corenqchart/corenqchart.component';
 import { ResenqchartComponent} from './charts/resenqchart/resenqchart.component';
+import { CorstatuschartComponent } from './charts/corstatuschart/corstatuschart.component';
+import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.component';
 
 
 @NgModule({
@@ -105,6 +107,8 @@ import { ResenqchartComponent} from './charts/resenqchart/resenqchart.component'
     CourseindividualviewComponent,
     CorenqchartComponent,
     ResenqchartComponent,
+    CorstatuschartComponent,
+    ResstatuschartComponent,
    
 
   ],
