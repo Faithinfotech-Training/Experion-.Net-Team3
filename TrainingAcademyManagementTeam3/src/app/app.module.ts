@@ -62,6 +62,8 @@ import { CoordinatorComponent } from './coordinator/coordinator.component';
 import { LeadviewComponent } from './leadview/leadview.component';
 import { ChartsModule } from 'ng2-charts';
 import { CorenqchartComponent } from './charts/corenqchart/corenqchart.component';
+import { ResenqchartComponent} from './charts/resenqchart/resenqchart.component';
+
 
 @NgModule({
   declarations: [
@@ -101,7 +103,8 @@ import { CorenqchartComponent } from './charts/corenqchart/corenqchart.component
     CoordinatorComponent,
     LeadviewComponent,
     CourseindividualviewComponent,
-    CorenqchartComponent
+    CorenqchartComponent,
+    ResenqchartComponent,
    
 
   ],

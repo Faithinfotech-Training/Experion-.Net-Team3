@@ -36,6 +36,7 @@ import { ResourceindividualviewComponent } from './resources/resourceindividualv
 import {CoordinatorComponent} from './coordinator/coordinator.component'
 import {LeadviewComponent} from './leadview/leadview.component'
 import { CorenqchartComponent } from './charts/corenqchart/corenqchart.component';
+import { ResenqchartComponent } from './charts/resenqchart/resenqchart.component';
 
 
 const routes: Routes = [
@@ -81,7 +82,8 @@ const routes: Routes = [
   {path:'coordinator',component:CoordinatorComponent},
   {path:'leadview',component:LeadviewComponent},
   {path:'courseindividualview/:corId', component: CourseindividualviewComponent},
-  {path:'charts/corenqchart', component: CorenqchartComponent}
+  {path:'charts/corenqchart', component: CorenqchartComponent},
+  {path:'charts/resenqchart', component: ResenqchartComponent}
  
 
 ];
