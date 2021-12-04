@@ -65,6 +65,7 @@ import { CorenqchartComponent } from './charts/corenqchart/corenqchart.component
 import { ResenqchartComponent} from './charts/resenqchart/resenqchart.component';
 import { CorstatuschartComponent } from './charts/corstatuschart/corstatuschart.component';
 import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -109,6 +110,7 @@ import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.
     ResenqchartComponent,
     CorstatuschartComponent,
     ResstatuschartComponent,
+    AboutComponent,
    
 
   ],

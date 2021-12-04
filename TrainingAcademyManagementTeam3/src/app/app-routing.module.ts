@@ -39,6 +39,7 @@ import { CorenqchartComponent } from './charts/corenqchart/corenqchart.component
 import { ResenqchartComponent } from './charts/resenqchart/resenqchart.component';
 import { CorstatuschartComponent } from './charts/corstatuschart/corstatuschart.component';
 import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.component';
+import { AboutComponent } from './about/about.component'
 
 
 const routes: Routes = [
@@ -87,7 +88,8 @@ const routes: Routes = [
   {path:'charts/corenqchart', component: CorenqchartComponent},
   {path:'charts/resenqchart', component: ResenqchartComponent},
   {path:'charts/corstatuschart', component: CorstatuschartComponent},
-  {path:'charts/resstatuschart', component: ResstatuschartComponent}
+  {path:'charts/resstatuschart', component: ResstatuschartComponent},
+  {path:'about', component: AboutComponent}
  
 
 ];
