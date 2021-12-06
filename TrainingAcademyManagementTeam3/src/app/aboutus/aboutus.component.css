@@ -27,7 +27,7 @@ body {
   .about-section {
     padding: 50px;
     text-align: center;
-    background-color: #474e5d;
+    background-color: #999999;
     color: white;
   }
   
@@ -99,4 +99,10 @@ body {
     /* Show the dropdown menu on hover */
     .dropdown:hover .dropdown-content {
       display: block;
+    }
+    h5{
+      color: black;
+    }
+    .card-text{
+      color: black;
     }
