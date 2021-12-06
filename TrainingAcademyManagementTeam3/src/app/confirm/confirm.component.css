@@ -119,6 +119,7 @@ input, button, select, optgroup, textarea {
 .navbar-light .navbar-brand{
   color: white;
   font-weight: 500;
+
 }
 
 /*----footer-----*/
@@ -170,3 +171,4 @@ footer {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+

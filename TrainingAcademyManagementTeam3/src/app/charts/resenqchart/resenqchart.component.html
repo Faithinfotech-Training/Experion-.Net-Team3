@@ -15,16 +15,20 @@
 </nav>
 <div class="container">
     <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link" href="charts/corenqchart">Courses with Enquiry Count</a>
-      </li>
-      <li class="nav-item">
-        <button class="nav-link">Resources with Enquiry Count</button>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="">Enquiry Accepted/Rejected Count</a>
-      </li>
-    </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="charts/corenqchart">Courses with Enquiry Count</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="charts/resenqchart">Resources with Enquiry Count</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="charts/corstatuschart">Course Enquiry Accepted/Rejected Count</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="charts/resstatuschart">Resource Enquiry Accepted/Rejected Count</a>
+        </li>
+      </ul>
+
     <div>
         <button class="button-gen" (click)="getCourseName()">Generate Chart</button>
         <div class="mgr-chart">
