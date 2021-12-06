@@ -16,11 +16,11 @@
   </nav>
 
 <div class="container">
-  <h3>Enquiry</h3>
+  <h3 style="text-align: center;">Resource Enquiry</h3>
   <form name="renqform" #form="ngForm" autocomplete="nope" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
         <label class="col-md-4">Resource Name</label>
-        <select name="ResourceId" id="ResourceId" class="form-control" #ResourceId="ngModel" required
+        <select name="ResourceId" id="ResourceId" class="form-control" placeholder="Coose Resource" #ResourceId="ngModel" required
             [(ngModel)]="renqService.formData.ResourceId">
             <option value=0 disabled>Choose Resource</option>
             <option *ngFor="let res of renqService.resources" value="{{res.ResourceId}}">{{res.ResourceName}}</option>
@@ -52,4 +52,5 @@
 
     </div>
 </form>
+<br>
 </div>
