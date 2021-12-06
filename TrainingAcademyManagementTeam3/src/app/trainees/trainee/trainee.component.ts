@@ -46,6 +46,7 @@ export class TraineeComponent implements OnInit {
 
 if(addId==0||addId==null)
 {
+  form.value.IsActive = true;
   this.insertTrainee(form);
   //window.location.reload();
 
@@ -57,6 +58,7 @@ else{
   this.updateTrainee(form);
 
 }
+
 
   }
 
@@ -80,7 +82,7 @@ insertTrainee(form?:NgForm)
       this.toxterService.success('Trainee details Inserted!', 'succes!');
     }
   );
-  window.location.reload();
+  this.router.navigate(['traineedit']);
 }
 //update trainee
 
@@ -96,7 +98,7 @@ updateTrainee(form?:NgForm)
       
     }
   );
-  window.location.reload();
+ this.router.navigate(['traineedit']);
 }
 }
 

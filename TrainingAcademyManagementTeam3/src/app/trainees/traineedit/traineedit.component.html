@@ -28,19 +28,20 @@
             [(ngModel)] ="filter">
 
         </div>
+        <br>
         <div>
           
-            <a [routerLink] = "['trainee']"  class="btn btn-primary" style ="float :right;margin-bottom:10px" > Add Trainee</a>
+            <a [routerLink] = "['trainee']"  class="btn btn-primary" style ="float :right;margin-bottom:10px;background-color: #7829cf;color:white"  > Add Trainee</a>
         </div>
     </div>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>
-                   TraineeId
+                   Trainee Id
                 </th>
                 <th>
-                    LeadId
+                    Lead Id
                 </th>
                 <th>
                    Batch Id
@@ -64,8 +65,8 @@
                 <td (click)="populateForm(bt)">{{bt.IsActive}}</td>
                
                 <td>
-                    <button class="btn btn-sm btn-outline-danger" (click) ="deleteTrainee(bt.TraineeId)">Delete</button>&nbsp;
-                    <button class="btn btn-sm btn-info" style="margin-left:10px"  (click)="updateTrainee(bt.TraineeId); populateForm(bt)">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger" (click) ="deleteTrainee(bt.TraineeId)">X</button>&nbsp;
+                    <button class="btn btn-sm btn-info" style="margin-left: 10px;background-color: #7829cf;color:white" (click)="updateTrainee(bt.TraineeId); populateForm(bt)">Edit</button>
                   
                 </td>
 
