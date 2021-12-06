@@ -26,29 +26,27 @@
         </div>     
         <br>        
     </div>
-    <div class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4" (ngModel)="filter">   
+    <div class="col-md- ml-sm-auto col-lg-10 pt-3 px-4" (ngModel)="filter">   
         <div class="row">       
             <div class="col-3"
-                *ngFor="let crs of courseService.courses |filter: filter | paginate:{itemsPerPage:4, currentPage: page}">
+                *ngFor="let crs of courseService.courses |filter: filter | paginate:{itemsPerPage:3, currentPage: page}">
                             <div class="card" style="width: 18rem;">               
                     <a href=""><img class="card-img-top"                        
-                            src="http://www.wiu.edu/cbt/images/CbtHomeResourcesFeb2018.jpg" alt="Card image cap"></a>   
+                            src="https://olc-wordpress-assets.s3.amazonaws.com/uploads/2018/06/INSTRUCTIONAL-DESIGNER-WEBINAR-COURSE-DESIGN-01.png" alt="Card image cap"></a>   
                                
                     <div class="card-body">                 
 
                         <h5 class="card-title">{{crs.CourseName}}</h5>                   
-                        <p class="card-text">Some
-                            quick example text to build on the card title and make up the bulk of the                   
-                                card's content.</p>                   
-                        <a href="{{'./courseindividualview/'+crs.CourseId}}" class="btn btn-primary">
+                        <p class="card-text"></p>                   
+                        <a href="{{'./courseindividualview/'+crs.CourseId}}" class="btn btn-purple">
                             View
                             Details</a>               
-                    </div>           
+                    </div>        
                 </div>       
             </div>   
         </div>   
         <div class="footer">       
             <!--Pagination-->       
-            <pagination-controls (pageChange)="page=($event)"></pagination-controls>   
+            <pagination-controls style="background: #7829CF;" (pageChange)="page=($event)"></pagination-controls>   
         </div>
     </div>

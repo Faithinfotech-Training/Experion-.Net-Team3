@@ -12,7 +12,7 @@ footer {
   font-size: 1.1em;
   color: white;
   background: #7829CF;
-  background: linear-gradient(to right, #7829CF, #F92D97);
+  background: linear-gradient(to right, #7829CF, #7829CF);
   padding: 4em ; 
 }
 
@@ -55,4 +55,9 @@ footer {
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+  .ngx-pagination .current
+  {
+    background: #6a00b1;
   }

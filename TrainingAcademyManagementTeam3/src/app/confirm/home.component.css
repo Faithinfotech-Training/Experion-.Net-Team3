@@ -1,0 +1,124 @@
+h1, .h1 {
+    font-size: 3.0rem;
+    line-height: 1.5;
+    color: white;
+    font-weight: 400;
+    font-family: "Poppins", Arial, sans-serif; 
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://i.pinimg.com/736x/7e/44/d7/7e44d784e358286f8f3f2cc2079189de.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;    
+}
+.hero-text-box {
+    
+    width: 100%;
+    padding-top: 10%;
+    padding-left: 8%;
+}
+
+/* ----- BUTTONS ----- */
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: #f92d97;
+    border: 1px solid #f92d97;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #f92d97;
+    color: #f92d97;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #7829cf;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #7829cf;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #7829cf;
+    color: #fff;
+}
+
+/*----header----*/
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+  }
+  .navbar-light .navbar-brand{
+    color: white;
+    font-weight: 500;
+  }
+  
+  /*----footer-----*/
+  footer {
+    font-size: 1.1em;
+    color: white;
+    background: #7829CF;
+    background: linear-gradient(to right, #7829CF, #F92D97);
+    padding: 4em ; 
+  }
+  
+  .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+     padding-top:8px;
+      background-color: inherit;
+      font-family: inherit; /* Important for vertical align on mobile phones */
+      margin: 0; /* Important for vertical align on mobile phones */
+    }
+  
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #6a00b1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      float: none;
+      color: rgb(255, 255, 255);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }

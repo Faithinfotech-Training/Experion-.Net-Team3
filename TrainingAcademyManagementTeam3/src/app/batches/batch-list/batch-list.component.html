@@ -7,6 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/admin">Go Back</a></li>
          
         
         </ul>
@@ -14,16 +15,16 @@
     </div>
   </nav>
 <div class="container">
-    <div class="header">
-        <h5>Batch Info</h5>
+    <div class="header"> <br>
+        <h2 style="margin-left: 17em;">Batch Details</h2> <br>
         <!--Search functionality-->
         <div class="form-group">
             <input class="form-control" type="text"
             placeholder="Search here..." [(ngModel)]="filter"> 
 
         </div>
-      
-      <a [routerLink]="['../batch']"class="btn btn-primary" style="float: right; margin-bottom: 10px;">Add Batch</a>
+      <br>
+      <a [routerLink]="['../batch']"class="btn btn-primary" style="float: right; margin-bottom: 10px;background: #7829cf;">Add Batch</a>
     </div>
     <table class="table table-bordered table-striped">
      <thead>
@@ -44,7 +45,7 @@
              <td>
                  <button class="btn btn-sm btn-outline-danger"
                  (click)="deleteBatch(crs.BatchId)">X</button>&nbsp;
-                 <button (click)="updateBatch(crs.BatchId)"  class="btn btn-info" style="margin-left: 10px;">Edit</button>
+                 <button (click)="updateBatch(crs.BatchId)"  class="btn btn-info" style="margin-left: 10px;background-color: #7829cf;color:white">Edit</button>
                  
              </td>
          </tr>
@@ -56,4 +57,4 @@
     </div>
 
 </div>
-    
+<br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br>

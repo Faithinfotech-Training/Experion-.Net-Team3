@@ -45,6 +45,7 @@ export class CourseComponent implements OnInit {
        
         if(addId==0||addId==null){
            //insert
+           form.value.IsActive=true;
           this.insertCourseRecord(form);
         }
         else

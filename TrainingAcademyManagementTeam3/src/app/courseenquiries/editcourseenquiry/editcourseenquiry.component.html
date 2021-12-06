@@ -1,4 +1,4 @@
-
+<div class="container">
 <form name="editform" #form="ngForm" (ngSubmit)="onSubmit(form)">
     <label for="CourseEnquiryId">CourseEnquiryId</label> <input type="" name="CourseEnquiryId"
         [ngModel]="cenqService.formData2.CourseEnquiryId" class="form-control" placeholder="Enter full name"
@@ -33,8 +33,10 @@
         [(ngModel)]="cenqService.formData2.CourseEnquiryDate" class="form-control" [ngClass]="{ 'is-invalid': CourseEnquiryDate.touched
              && CourseEnquiryDate.invalid }" />
     <div class="form-group">
-        <button type="submit" class="btn btn-lg btn-primary form-control">Update Status</button>
+        <button style="background:#7829CF;width:40%;margin-left:7em" type="submit" class="btn btn-lg btn-primary form-control">Update Status</button>
 
 
     </div>
 </form>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>

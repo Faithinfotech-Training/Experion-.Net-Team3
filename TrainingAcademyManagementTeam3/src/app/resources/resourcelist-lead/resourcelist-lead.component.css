@@ -66,3 +66,8 @@ h5{
     .dropdown:hover .dropdown-content {
       display: block;
     }
+    .btn-purple
+    {
+      color:white;
+      background: #7829CF;
+    }

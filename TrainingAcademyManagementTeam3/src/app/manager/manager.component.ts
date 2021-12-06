@@ -14,6 +14,8 @@ export class ManagerComponent implements OnInit {
 
   ngOnInit(): void {
     this.loggedUserName = localStorage.getItem("username");
+
+    this.loggedUserName.toUpperCase();
   }
   //logout
   logOut(){

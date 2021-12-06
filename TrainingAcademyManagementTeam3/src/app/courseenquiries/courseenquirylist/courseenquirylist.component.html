@@ -32,7 +32,7 @@
                 <td style="display: none;" (click)="populateForm(enq)">{{enq.CourseEnquiryDate | date:'dd-MM-yyyy'}}</td>
                 <td>
                     <button class="btn btn-sm btn-outline-danger" (click)="deleteCourseEnquiry(enq.CourseEnquiryId)">X</button>&nbsp;
-                    <button class="btn btn-sm btn-info" (click)="populateForm(enq)">Edit</button>
+                    <button style="color: white;background-color: blueviolet;" class="btn btn-sm btn-info" (click)="populateForm(enq)">Edit</button>
                 </td>
             </tr>
         </tbody>

@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.loggedUserName = localStorage.getItem("username");
+    this.loggedUserName=this.loggedUserName.toUpperCase();
   }
   //logout
   logOut(){

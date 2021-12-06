@@ -7,82 +7,88 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/courselist">Go Back</a></li>
          
         
         </ul>
       </div>
     </div>
   </nav>
-<form name="corform" #form="ngForm" autocomplete="off"
-(ngSubmit)="onSubmit(form)">
+  <br>
+  <div class="container">
 
-    <!--Course ID-->
-
-    <input type="text" name="CourseId" [(ngModel)]="corservice.formData.CourseId" />
-
-    <!--Course Name-->
-
-    <div class="form-group">
-
-        <label>Course Name</label>
-
-        <input name="CourseName" #CourseName="ngModel" [(ngModel)]="corservice.formData.CourseName"
-            class="form-control" place holder="enter name " minLength="10" maxLength="25" required
-            [ngClass]="{'is invalid':CourseName.touched && CourseName.invalid}" />
-
-        <div class="validation-error" *ngIf="CourseName.touched&&CourseName.invalid">
-
-            <div *ngIf="CourseName.errors.required">Course Name is required</div>
-
+    <form name="corform" #form="ngForm" autocomplete="off"
+    (ngSubmit)="onSubmit(form)">
+    
+        <!--Course ID-->
+    
+        <input style="display: none;" type="text" name="CourseId" [(ngModel)]="corservice.formData.CourseId" />
+    
+        <!--Course Name-->
+    
+        <div class="form-group">
+    
+            <label>Course Name</label>
+    
+            <input name="CourseName" #CourseName="ngModel" [(ngModel)]="corservice.formData.CourseName"
+                class="form-control" place holder="enter name " minLength="10" maxLength="25" required
+                [ngClass]="{'is invalid':CourseName.touched && CourseName.invalid}" />
+    
+            <div class="validation-error" *ngIf="CourseName.touched&&CourseName.invalid">
+    
+                <div *ngIf="CourseName.errors.required">Course Name is required</div>
+    
+            </div>
+        </div>
+    
+        <!--Course Fees-->
+    
+        <div class="form-group">
+            <label>Course Fees</label>
+            <input type="number" name="CourseFees" #CourseFees="ngModel" [(ngModel)]="corservice.formData.CourseFees"
+                class="form-control" place holder="enter Course Fees " minLength="2" maxLength="25" required
+                [ngClass]="{'is invalid':CourseFees.touched && CourseFees.invalid}" />
+            <div class="validation-error" *ngIf="CourseFees.touched&&CourseFees.invalid">
+            <div *ngIf="CourseFees.errors.required">Course Fees is required</div>
+    
+            </div>
+        </div>
+    
+        <!--Course Description-->
+    
+        <div class="form-group">
+    
+            <label>Course Description</label>
+    
+            <input name="CourseDescription" #CourseDescription="ngModel" [(ngModel)]="corservice.formData.CourseDescription"
+                class="form-control" place holder="enter Course Description " minLength="2" maxLength="25" required
+                [ngClass]="{'is invalid':CourseDescription.touched && CourseDescription.invalid}" />
+    
+            <div class="validation-error" *ngIf="CourseDescription.touched&&CourseDescription.invalid">
+    
+                <div *ngIf="CourseDescription.errors.required">Course Description is required</div>
+    
+            </div>
+        </div>
+     <!--Is Active-->
+    
+     <div style="display: none;" class="form-group">
+        <div class="form-check">
+            <label class="form-check-label">Is Active</label>
+            <input type="checkbox" name="IsActive" id="IsActive" #IsActive="ngModel"
+                [(ngModel)]="corservice.formData.IsActive" class="form-check-input">
+    
         </div>
     </div>
-
-    <!--Course Fees-->
-
-    <div class="form-group">
-        <label>Course Fees</label>
-        <input type="number" name="CourseFees" #CourseFees="ngModel" [(ngModel)]="corservice.formData.CourseFees"
-            class="form-control" place holder="enter Course Fees " minLength="2" maxLength="25" required
-            [ngClass]="{'is invalid':CourseFees.touched && CourseFees.invalid}" />
-        <div class="validation-error" *ngIf="CourseFees.touched&&CourseFees.invalid">
-        <div *ngIf="CourseFees.errors.required">Course Fees is required</div>
-
+    
+        <!--Submit button-->
+        <br>
+        <div class="form-group" >
+            <button style="background:#7829cf;width:20%;margin-left:25em" type="submit" [disabled]="!(form.valid && form.dirty)"
+            class="btn btn-lg btn-primary form-control">Submit</button>
         </div>
-    </div>
-
-    <!--Course Description-->
-
-    <div class="form-group">
-
-        <label>Course Description</label>
-
-        <input name="CourseDescription" #CourseDescription="ngModel" [(ngModel)]="corservice.formData.CourseDescription"
-            class="form-control" place holder="enter Course Description " minLength="2" maxLength="25" required
-            [ngClass]="{'is invalid':CourseDescription.touched && CourseDescription.invalid}" />
-
-        <div class="validation-error" *ngIf="CourseDescription.touched&&CourseDescription.invalid">
-
-            <div *ngIf="CourseDescription.errors.required">Course Description is required</div>
-
-        </div>
-    </div>
- <!--Is Active-->
-
- <div class="form-group">
-    <div class="form-check">
-        <label class="form-check-label">Is Active</label>
-        <input type="checkbox" name="IsActive" id="IsActive" #IsActive="ngModel"
-            [(ngModel)]="corservice.formData.IsActive" class="form-check-input">
-
-    </div>
-</div>
-
-    <!--Submit button-->
-    <br>
-    <div class="form-group" >
-        <button type="submit" [disabled]="!(form.valid && form.dirty)"
-        class="btn btn-lg btn-primary form-control">Submit</button>
-    </div>
-</form>
-
-
+    </form> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br>
+    
+    
+    
+  </div>

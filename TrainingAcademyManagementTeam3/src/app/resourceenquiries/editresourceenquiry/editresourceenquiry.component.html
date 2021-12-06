@@ -1,4 +1,4 @@
-<p>editresourceenquiry works!</p>
+<div class="container">
 <form name="editform" #form="ngForm" (ngSubmit)="onSubmit(form)">
    <label for="ResourceEnquiryId">ResourceEnquiryId</label> <input type="" name="ResourceEnquiryId" [ngModel]="renqService.formData.ResourceEnquiryId"class="form-control" placeholder="Enter full name" minlength="10" maxlength="25" required
     />
@@ -32,9 +32,10 @@
         class="form-control"  [ngClass]="{ 'is-invalid': ResourceEnquiryDate.touched
              && ResourceEnquiryDate.invalid }" />
     <div class="form-group">
-        <button type="submit" 
+        <button style="background:#7829CF;width:40%;margin-left:7em" type="submit" 
             class="btn btn-lg btn-primary form-control">Update Status</button>
 
 
     </div>
 </form>
+</div>

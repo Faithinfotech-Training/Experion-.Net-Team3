@@ -45,6 +45,7 @@ export class BatchComponent implements OnInit {
        
         if(addId==0||addId==null){
            //insert
+           form.value.IsActive=true;
           this.insertBatchRecord(form);
         }
         else

@@ -13,6 +13,7 @@ export class CoordinatorComponent implements OnInit {
   constructor(private authService:AuthService,private router:Router ) { }
 
   ngOnInit(): void {this.loggedUserName = localStorage.getItem("username");
+  this.loggedUserName.toUpperCase();
   }
   logOut(){
     this.authService.logOut();

@@ -60,6 +60,7 @@ export class LeadComponent implements OnInit {
          console.log("update")
          this.updateLeadRecord(form);
         }
+        this.router.navigateByUrl('/leadview')
       
       }
     

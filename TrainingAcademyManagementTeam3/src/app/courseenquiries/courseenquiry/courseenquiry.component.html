@@ -6,17 +6,20 @@
           class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/leadview">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/leadview">Go Back</a></li>
          
         
         </ul>
       </div>
     </div>
   </nav>
-<h3>Enquiry</h3>
-<form name="cenqform" #form="ngForm" autocomplete="nope" (ngSubmit)="onSubmit(form)">
+
+<div class="container">
+  <h3>Enquiry</h3>
+  <form name="cenqform" #form="ngForm" autocomplete="nope" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
-        <label class="col-md-4">Course Id</label>
+        <label class="col-md-4">Course Name</label>
         <select name="CourseId" id="CourseId" class="form-control" #CourseId="ngModel" required
             [(ngModel)]="cenqService.formData2.CourseId">
             <option value=0 disabled>Choose Course</option>
@@ -27,7 +30,7 @@
         <div class="validation-error" *ngIf="CourseId.touched 
         && CourseId.invalid">
             <div *ngIf="CourseId.errors.required">
-                Department Id is required</div>
+                Course Name is required</div>
         </div>
     </div><br>
     <label for="EnquiryDescription">Your Enquiry</label>
@@ -43,9 +46,10 @@
         class="form-control"  [ngClass]="{ 'is-invalid': CourseEnquiryDate.touched
              && CourseEnquiryDate.invalid }" />
     <div class="form-group">
-        <button type="submit" [disabled]="!(form.valid && form.dirty)"
+        <button  style="background:#7829CF;width:20%;;margin-left: 20em;" type="submit" [disabled]="!(form.valid && form.dirty)"
             class="btn btn-lg btn-primary form-control">Submit Enquiry</button>
 
 
     </div>
 </form>
+</div>

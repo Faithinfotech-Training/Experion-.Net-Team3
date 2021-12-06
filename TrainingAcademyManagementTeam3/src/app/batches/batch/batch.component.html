@@ -7,78 +7,83 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/batchlist">Go Back</a></li>
          
         
         </ul>
       </div>
     </div>
   </nav>
-<form name="batform" #form="ngForm" autocomplete="off"
-(ngSubmit)="onSubmit(form)">
+  <div class="container">
 
-    <!--Batch Id-->
-
-    <input type="text" name="BatchId" [(ngModel)]="batservice.formData.BatchId" />
-
-    <!--Batch Name-->
-
-    <div class="form-group">
-
-        <label>Batch Name</label>
-
-        <input name="BatchName" #BatchName="ngModel" [(ngModel)]="batservice.formData.BatchName"
-            class="form-control" place holder="enter name " minLength="10" maxLength="25" required
-            [ngClass]="{'is invalid':BatchName.touched && BatchName.invalid}" />
-
-        <div class="validation-error" *ngIf="BatchName.touched&&BatchName.invalid">
-
-            <div *ngIf="BatchName.errors.required">Batch Name is required</div>
-
-        </div>
-
-
-
-    </div>
-
-    <!--Batch Strength-->
-
-    <div class="form-group">
-
-        <label>Batch Strength</label>
-
-        <input type="number" name="BatchStrength" #BatchStrength="ngModel" [(ngModel)]="batservice.formData.BatchStrength"
-            class="form-control" place holder="enter Batch Strength " minLength="2" maxLength="25" required
-            [ngClass]="{'is invalid':BatchStrength.touched && BatchStrength.invalid}" />
-
-        <div class="validation-error" *ngIf="BatchStrength.touched&&BatchStrength.invalid">
-
-            <div *ngIf="BatchStrength.errors.required">Batch Strength is required</div>
-
-        </div>
-    </div>
-
+    <form name="batform" #form="ngForm" autocomplete="off"
+    (ngSubmit)="onSubmit(form)">
     
-
-
- <!--Is Active-->
-
- <div class="form-group">
-    <div class="form-check">
-        <label class="form-check-label">Is Active</label>
-        <input type="checkbox" name="IsActive" id="IsActive" #IsActive="ngModel"
-            [(ngModel)]="batservice.formData.IsActive" class="form-check-input">
-
+        <!--Batch Id-->
+    
+        <input style="display: none;" type="text" name="BatchId" [(ngModel)]="batservice.formData.BatchId" />
+    
+        <!--Batch Name-->
+    
+        <div class="form-group">
+    
+            <label>Batch Name</label>
+    
+            <input name="BatchName" #BatchName="ngModel" [(ngModel)]="batservice.formData.BatchName"
+                class="form-control" place holder="enter name " minLength="10" maxLength="25" required
+                [ngClass]="{'is invalid':BatchName.touched && BatchName.invalid}" />
+    
+            <div class="validation-error" *ngIf="BatchName.touched&&BatchName.invalid">
+    
+                <div *ngIf="BatchName.errors.required">Batch Name is required</div>
+    
+            </div>
+    
+    
+    
+        </div>
+    
+        <!--Batch Strength-->
+    
+        <div class="form-group">
+    
+            <label>Batch Strength</label>
+    
+            <input type="number" name="BatchStrength" #BatchStrength="ngModel" [(ngModel)]="batservice.formData.BatchStrength"
+                class="form-control" place holder="enter Batch Strength " minLength="2" maxLength="25" required
+                [ngClass]="{'is invalid':BatchStrength.touched && BatchStrength.invalid}" />
+    
+            <div class="validation-error" *ngIf="BatchStrength.touched&&BatchStrength.invalid">
+    
+                <div *ngIf="BatchStrength.errors.required">Batch Strength is required</div>
+    
+            </div>
+        </div>
+    
+        
+    
+    
+     <!--Is Active-->
+    
+     <div style="display: none;" class="form-group">
+        <div class="form-check">
+            <label class="form-check-label">Is Active</label>
+            <input type="checkbox" name="IsActive" id="IsActive" #IsActive="ngModel"
+                [(ngModel)]="batservice.formData.IsActive" class="form-check-input">
+    
+        </div>
     </div>
-</div>
-
-    <!--Submit button-->
-    <br>
-    <div class="form-group" >
-        <button type="submit" [disabled]="!(form.valid && form.dirty)"
-        class="btn btn-lg btn-primary form-control">Submit</button>
-    </div>
-
-
-</form>
-
-
+    
+        <!--Submit button-->
+        <br>
+        <div class="form-group" >
+            <button style="background:#7829cf;width:20%;margin-left:25em" type="submit" [disabled]="!(form.valid && form.dirty)"
+            class="btn btn-lg btn-primary form-control">Submit</button>
+        </div>
+    
+    
+    </form>
+    
+    
+    
+  </div> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br>
