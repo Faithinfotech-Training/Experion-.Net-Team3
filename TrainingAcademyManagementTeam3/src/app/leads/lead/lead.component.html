@@ -32,7 +32,7 @@
                 <input type="hidden" name="LeadId" [ngModel]="leadService.formData.LeadId" />
 
                 <!--Lead name-->
-                <label class="shopping-idea-2"> Name</label>
+                <label class="shopping-idea-2">Full Name</label>
                 <input name="LeadName" #LeadName="ngModel" [ngModel]="leadService.formData.LeadName"
                     class="form-control" placeholder="Enter full name" minlength="3" maxlength="25" required
                     [ngClass]="{'is-invalid':LeadName.touched && LeadName.invalid}" />
@@ -110,7 +110,7 @@
                 <!--ContactNo-->
                 <label class="shopping-idea-2">ContactNo</label>
                 <input type="text" name="ContactNo" #ContactNo="ngModel" [ngModel]="leadService.formData.ContactNo"
-                class="form-control" placeholder="Enter ContactNo" minlength="10" maxlength="10" required
+                class="form-control" placeholder="Enter Contact No" minlength="10" maxlength="10" required
                 [ngClass]="{'is-invalid':ContactNo.touched && ContactNo.invalid}" pattern="^((\\+91-?)|0)?[0-9]{10}$" />
                 <div class="validation-error" *ngIf="ContactNo.touched && ContactNo.invalid">
                     <div *ngIf="ContactNo.errors.required">

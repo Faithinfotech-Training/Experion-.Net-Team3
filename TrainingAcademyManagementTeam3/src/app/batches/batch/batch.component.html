@@ -14,11 +14,12 @@
       </div>
     </div>
   </nav>
+  <br>
   <div class="container">
 
     <form name="batform" #form="ngForm" autocomplete="off"
     (ngSubmit)="onSubmit(form)">
-    
+   
         <!--Batch Id-->
     
         <input style="display: none;" type="text" name="BatchId" [(ngModel)]="batservice.formData.BatchId" />

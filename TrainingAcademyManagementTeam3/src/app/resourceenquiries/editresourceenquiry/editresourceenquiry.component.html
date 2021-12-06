@@ -1,12 +1,12 @@
 <div class="container">
 <form name="editform" #form="ngForm" (ngSubmit)="onSubmit(form)">
-   <label for="ResourceEnquiryId">ResourceEnquiryId</label> <input type="" name="ResourceEnquiryId" [ngModel]="renqService.formData.ResourceEnquiryId"class="form-control" placeholder="Enter full name" minlength="10" maxlength="25" required
+   <label for="ResourceEnquiryId">Resource Enquiry Id</label> <input type="" name="ResourceEnquiryId" [ngModel]="renqService.formData.ResourceEnquiryId"class="form-control" placeholder="Enter resource enquiry id" minlength="10" maxlength="25" required
     />
     <label for="EnquiryDescription">Enquiry</label>
     <textarea name="EnquiryDescription" id="EnquiryDescription" class="form-control" #EnquiryDescription="ngModel" 
     [(ngModel)]="renqService.formData.EnquiryDescription"></textarea>
-<br>
-    <label for="ResourceEnquiryStatus">ResourceEnquiryStatus</label> 
+
+    <label for="ResourceEnquiryStatus">Resource Enquiry Status</label> 
     <select   name="ResourceEnquiryStatus" id="ResourceEnquiryStatus" class="form-control" #ResourceEnquiryStatus="ngModel" required
     [(ngModel)]="renqService.formData.ResourceEnquiryStatus">
    

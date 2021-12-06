@@ -39,11 +39,11 @@
 
         <!--Username-->
         <input name="UserName" #UserName="ngModel" [ngModel]="conService.formData.UserName" class="form-control"
-          placeholder="Enter new username" minlength="2" maxlength="25" required
+          placeholder="Enter new user name" minlength="2" maxlength="25" required
           [ngClass]="{'is-invalid':UserName.touched && UserName.invalid}" />
         <div class="validation-error" *ngIf="UserName.touched && UserName.invalid">
           <div *ngIf="UserName.errors.required">
-            <p class="shopping-idea-1">Username is required</p>
+            <p class="shopping-idea-1">User name is required</p>
           </div>
         </div>
 

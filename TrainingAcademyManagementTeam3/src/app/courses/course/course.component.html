@@ -20,6 +20,7 @@
     <form name="corform" #form="ngForm" autocomplete="off"
     (ngSubmit)="onSubmit(form)">
     
+    
         <!--Course ID-->
     
         <input style="display: none;" type="text" name="CourseId" [(ngModel)]="corservice.formData.CourseId" />
@@ -104,7 +105,7 @@
             <button style="background:#7829cf;width:20%;margin-left:25em" type="submit" [disabled]="!(form.valid && form.dirty)"
             class="btn btn-lg btn-primary form-control">Submit</button>
         </div>
-    </form> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br>
+    </form> <br><br><br><br>
     
     
     

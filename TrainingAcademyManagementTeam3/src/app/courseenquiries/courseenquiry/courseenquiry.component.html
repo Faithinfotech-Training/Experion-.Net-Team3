@@ -16,11 +16,11 @@
   </nav>
 
 <div class="container">
-  <h3>Enquiry</h3>
+  <h3 style="text-align: center;">Course Enquiry</h3>
   <form name="cenqform" #form="ngForm" autocomplete="nope" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
         <label class="col-md-4">Course Name</label>
-        <select name="CourseId" id="CourseId" class="form-control" #CourseId="ngModel" required
+        <select name="CourseId" id="CourseId" class="form-control" placeholder="Choose Course" #CourseId="ngModel" required
             [(ngModel)]="cenqService.formData2.CourseId">
             <option value=0 disabled>Choose Course</option>
             <option *ngFor="let res of cenqService.courses" value="{{res.CourseId}}">{{res.CourseName}}</option>
@@ -45,6 +45,7 @@
     <input style="display: none;"  type="date" name="CourseEnquiryDate" #CourseEnquiryDate="ngModel" [(ngModel)]="cenqService.formData2.CourseEnquiryDate"
         class="form-control"  [ngClass]="{ 'is-invalid': CourseEnquiryDate.touched
              && CourseEnquiryDate.invalid }" />
+             
     <div class="form-group">
         <button  style="background:#7829CF;width:20%;;margin-left: 20em;" type="submit" [disabled]="!(form.valid && form.dirty)"
             class="btn btn-lg btn-primary form-control">Submit Enquiry</button>
@@ -52,4 +53,6 @@
 
     </div>
 </form>
+<br>
 </div>
+
