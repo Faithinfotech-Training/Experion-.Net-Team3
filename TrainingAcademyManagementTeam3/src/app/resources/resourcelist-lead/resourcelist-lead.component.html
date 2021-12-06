@@ -29,7 +29,7 @@
 
 <div class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4" (ngModel)="filter">
     <div class="row">
-        <div class="col-3" *ngFor="let crs of resourceService.resources |filter: filter |paginate:{itemsPerPage:4, currentPage: page}" >
+        <div class="col-4" *ngFor="let crs of resourceService.resources |filter: filter |paginate:{itemsPerPage:3, currentPage: page}" >
             <div class="card" style="width: 18rem;">
                 <a href=""><img class="card-img-top"
                         src="http://www.wiu.edu/cbt/images/CbtHomeResourcesFeb2018.jpg" alt="Card image cap"></a>

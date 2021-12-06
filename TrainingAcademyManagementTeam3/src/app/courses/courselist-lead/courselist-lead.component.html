@@ -30,7 +30,7 @@
 
 <div class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4" (ngModel)="filter">
     <div class="row">
-        <div class="col-3" *ngFor="let crs of courseService.courses |filter: filter |paginate:{itemsPerPage:4, currentPage: page}" >
+        <div class="col-4" *ngFor="let crs of courseService.courses |filter: filter |paginate:{itemsPerPage:3, currentPage: page}" >
             <div class="card" style="width: 18rem;">
                 <a href=""><img class="card-img-top"
                         src="https://olc-wordpress-assets.s3.amazonaws.com/uploads/2018/06/INSTRUCTIONAL-DESIGNER-WEBINAR-COURSE-DESIGN-01.png" alt="Card image cap"></a>
