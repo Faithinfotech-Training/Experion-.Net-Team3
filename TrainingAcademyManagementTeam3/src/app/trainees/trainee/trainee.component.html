@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7829cf;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Geo Info Tech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/batchpage">Go Back</a></li>
+         
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <div class="container">
+
+
+<form name="traineeform" #form="ngForm" autocomplete="off"
+(ngSubmit)="onSubmit(form)">
+    <!--Trainee ID-->
+    <input style="display: none;" type="text" name="TraineeId" [(ngModel)]="traineeService.formData.TraineeId">
+
+   
+    <!--LeadId-->
+    <div class="form-group">
+        <label>LeadId</label>
+        <input name="LeadId" #LeadId="ngModel" [(ngModel)]="traineeService.formData.LeadId"
+            class="form-control" placeholder="Enter LeadId" required
+            [ngClass]="{ 'is-invalid': LeadId.touched && LeadId.invalid }" />
+        <div class="validation-error" *ngIf="LeadId.touched && LeadId.invalid">
+            <div *ngIf="LeadId.errors.required">LeadId is required</div>
+
+        </div>
+    </div>
+    
+    <!--Batch dropdown-->
+    <div class="form-group">
+        <label class="col-md-4">Batch</label>
+        <select name="BatchId" id="BatchId" class="form-control" #BatchId="ngModel" required
+            [(ngModel)]="batchService.formData.BatchId">
+            <option value=0 disabled>Choose Batch</option>
+            <option *ngFor="let bt of batchService.batches" 
+            value= "{{bt.BatchId}}">{{bt.BatchName}}</option>
+            
+        </select>
+        <div class="validation-error" *ngIf="BatchId.touched && BatchId.invalid">
+            <div *ngIf="BatchId.errors.required">Batch is required</div>
+        </div>
+    </div>
+    <!--Is Active-->
+
+    <div class="form-group">
+        <div class="form-check">
+            <label class="form-check-label">Is Active</label>
+            <input type="checkbox" name="IsActive" id="IsActive" #IsActive="ngModel"
+                [(ngModel)]="traineeService.formData.IsActive" class="form-check-input">
+        </div>
+    </div>
+    <!--Submit button-->
+    <br>
+    <div class="form-group">
+        <button  style="background:#7829CF;width:20%;" type="submit" [disabled]="!(form.valid && form.dirty)"
+        class="btn btn-lg btn-primary form-control">
+            Submit
+        </button>
+    </div>
+</form><br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br>
+    
+</div>

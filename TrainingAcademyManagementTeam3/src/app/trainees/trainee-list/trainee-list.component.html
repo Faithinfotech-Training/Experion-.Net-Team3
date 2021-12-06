@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7829cf;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Geo Info Tech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/batchpage">Go Back</a></li>
+         
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  
+<div class="container">
+    <div class="header">
+        <h5 class="text-center">
+            Trainee-Batch Details
+        </h5>
+        <!--Search-->
+        <div class="form-group">
+            <input class="form-control" type ="text"
+            placeholder="Search here..."
+            [(ngModel)] ="filter">
+
+        </div>
+       
+    </div>
+    <br>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                   Lead Id
+                </th>
+                <th>
+                    Trainee Name
+                </th>
+                <th>
+                    Batch Name
+                </th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bt of this.traineeviewService.traineeviews | filter: filter | paginate: {itemsPerPage: 5, currentPage:page} "  >
+                <td >{{bt.LeadId}}</td>
+                <td >{{bt.LeadName}}</td>
+                <td >{{bt.BatchName}}</td>
+                
+              
+        
+            </tr>
+        </tbody>
+
+
+
+    </table>
+    <div class="footer">
+        <!--pagination-->
+        <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+
+    </div>
+
+</div>

@@ -68,6 +68,13 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 
 import { CorstatuschartComponent } from './charts/corstatuschart/corstatuschart.component';
 import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.component';
+import { TraineesComponent } from './trainees/trainees.component';
+import { TraineeComponent } from './trainees/trainee/trainee.component';
+import { TraineeListComponent } from './trainees/trainee-list/trainee-list.component';
+import { TraineeditComponent } from './trainees/traineedit/traineedit.component';
+import { TraineeService } from './shared/trainee.service';
+import { TraineeviewService } from './shared/traineeview.service';
+import { BatchpageComponent } from './admin/batchpage/batchpage.component';
 
 
 
@@ -116,6 +123,11 @@ import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.
 
     CorstatuschartComponent,
     ResstatuschartComponent,
+    TraineesComponent,
+    TraineeComponent,
+    TraineeListComponent,
+    TraineeditComponent,
+    BatchpageComponent,
 
    
 
@@ -132,7 +144,7 @@ import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.
     ReactiveFormsModule,
     ChartsModule
   ],
-  providers: [CourseService, ResourceService, ResourceenquiryviewService, ConfirmService, LeadService, AuthGuard, AuthService, CourseenquiryviewService,
+  providers: [CourseService, ResourceService, ResourceenquiryviewService, ConfirmService, LeadService, AuthGuard, AuthService, CourseenquiryviewService,TraineeService,TraineeviewService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
