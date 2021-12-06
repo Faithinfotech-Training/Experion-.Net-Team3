@@ -5,5 +5,5 @@ export class Courseenquiryview {
     CourseEnquiryStatus: string;
     CourseName: string;
     LeadName: string;
-    CourseEnqiryDate: string;
+    CourseEnqiryDate: Date=new Date();
 }

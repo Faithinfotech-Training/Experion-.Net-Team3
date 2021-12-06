@@ -3,6 +3,6 @@ export class Courseenquiry {
     CourseId:Number;
     LeadId:Number;
     CourseEnquiryStatus:String;
-    CourseEnquiryDate:Date;
+    CourseEnquiryDate:Date=new Date();
     EnquiryDescription:string='';
 }

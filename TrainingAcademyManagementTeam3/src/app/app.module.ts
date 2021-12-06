@@ -68,6 +68,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 
 import { CorstatuschartComponent } from './charts/corstatuschart/corstatuschart.component';
 import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -132,7 +133,7 @@ import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.
     ReactiveFormsModule,
     ChartsModule
   ],
-  providers: [CourseService, ResourceService, ResourceenquiryviewService, ConfirmService, LeadService, AuthGuard, AuthService, CourseenquiryviewService,
+  providers: [CourseService, ResourceService, ResourceenquiryviewService, ConfirmService, LeadService, AuthGuard, AuthService, CourseenquiryviewService,DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

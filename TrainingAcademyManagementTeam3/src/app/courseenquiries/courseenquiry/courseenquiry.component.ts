@@ -61,7 +61,7 @@ courseenquiry:Courseenquiry=new Courseenquiry();
 {
  // form.value.LeadId=sessionStorage.getItem('UserId');
  form.value.CourseEnquiryStatus="Pending"
- form.value.CourseEnquiryDate=new Date();
+ //form.value.CourseEnquiryDate=new Date();
  form.value.LeadId=Number(sessionStorage.getItem("LoginId"));
  if(this.CourseEnquiryId!=0||(this.CourseEnquiryId!=null))
     {

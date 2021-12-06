@@ -3,6 +3,6 @@ export class Resourceenquiry {
     ResourceId:Number=0;
     LeadId:Number=0;
     ResourceEnquiryStatus:String='';
-    ResourceEnquiryDate:Date=new Date;
+    ResourceEnquiryDate:Date=new Date();
     EnquiryDescription:string='';
 }

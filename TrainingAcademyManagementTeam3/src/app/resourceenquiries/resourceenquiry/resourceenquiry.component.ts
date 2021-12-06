@@ -65,7 +65,7 @@ InsertResourceEnquiryRecord(form:NgForm)
 {
  // form.value.LeadId=sessionStorage.getItem('UserId');
  form.value.ResourceEnquiryStatus="Pending"
- form.value.ResourceEnquiryDate=new Date();
+ //form.value.ResourceEnquiryDate=new Date();
  form.value.LeadId=Number(sessionStorage.getItem("LoginId"));
  if(this.ResourceEnquiryId!=0||(this.ResourceEnquiryId!=null))
     {
