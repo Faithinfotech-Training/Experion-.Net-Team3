@@ -6,4 +6,5 @@ export class Course {
      TrainerId:number;
      IsActive:boolean=false;
      CourseDescription :string='';
+     CourseDuration:string='';
 }

@@ -70,6 +70,23 @@
     
             </div>
         </div>
+
+        <div class="form-group">
+    
+            <label>Course Duration</label>
+    
+            <input name="CourseDuration" #CourseDuration="ngModel" [(ngModel)]="corservice.formData.CourseDuration"
+                class="form-control" place holder="Enter Course Duration " minLength="2" maxLength="25" required
+                [ngClass]="{'is invalid':CourseDuration.touched && CourseDuration.invalid}" />
+    
+            <div class="validation-error" *ngIf="CourseDuration.touched && CourseDuration.invalid">
+    
+                <div *ngIf="CourseDuration.errors.required">Course Duration is required</div>
+    
+            </div>
+        </div>
+
+             
      <!--Is Active-->
     
      <div style="display: none;" class="form-group">

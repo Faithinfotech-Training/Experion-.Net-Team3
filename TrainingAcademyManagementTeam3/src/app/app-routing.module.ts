@@ -42,6 +42,11 @@ import {AboutusComponent} from './aboutus/aboutus.component'
 
 import { CorstatuschartComponent } from './charts/corstatuschart/corstatuschart.component';
 import { ResstatuschartComponent } from './charts/resstatuschart/resstatuschart.component';
+import { TraineeComponent } from './trainees/trainee/trainee.component';
+import { TraineeditComponent } from './trainees/traineedit/traineedit.component';
+import { TraineesComponent } from './trainees/trainees.component';
+import { TraineeListComponent } from './trainees/trainee-list/trainee-list.component';
+import { BatchpageComponent } from './admin/batchpage/batchpage.component';
 
 
 
@@ -96,6 +101,15 @@ const routes: Routes = [
 
   {path:'charts/corstatuschart', component: CorstatuschartComponent},
   {path:'charts/resstatuschart', component: ResstatuschartComponent},
+  {path:'trainee', component: TraineeComponent},
+  {path:'traineelist', component: TraineeListComponent},
+  {path:'traineedit', component: TraineeditComponent},
+  {path:'traineedit/trainee', component: TraineeComponent},
+  {path:'trainee/:trId', component: TraineeComponent},
+  {path:'trainees', component: TraineesComponent},
+  {path:'trainees/trainee', component: TraineeComponent},
+
+  {path:'batchpage', component: BatchpageComponent},
 
  
 

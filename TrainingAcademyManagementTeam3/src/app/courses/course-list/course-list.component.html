@@ -31,8 +31,9 @@
          <tr>
              <th>Course Id</th>
              <th>Course Name</th>
-             <th>CourseFees</th>
-             <th>CourseDescription</th>
+             <th>Course Fees</th>
+             <th>Course Description</th>
+             <th>Course Duration</th>
              <th>IsActive</th>
              <th>Action</th>
          </tr>
@@ -43,6 +44,7 @@
              <td (click)="populateForm(crs)">{{crs.CourseName}}</td>
              <td (click)="populateForm(crs)">{{crs.CourseFees}}</td>
              <td (click)="populateForm(crs)">{{crs.CourseDescription}}</td>
+             <td (click)="populateForm(crs)">{{crs.CourseDuration}}</td>
              <td (click)="populateForm(crs)">{{crs.IsActive}}</td>
              <td>
                  <button class="btn btn-sm btn-outline-danger"

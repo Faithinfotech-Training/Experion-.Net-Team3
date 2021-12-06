@@ -1,187 +1,148 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7829cf;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Geo Info Tech</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span
-          class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
-         
-          
+        <a class="navbar-brand" href="#">Geo Info Tech</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/home">Home</a></li>
 
-          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="/login">Sign In</a></li>
 
-        </ul>
-      </div>
-    </div>
-  </nav>
-<div class="container register-form">
-    <div>
-        <h2>Register here</h2>
-    </div>
-    <form name="leadform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
-        <!--Lead id-->
-        <input type="hidden" name="LeadId" [ngModel]="leadService.formData.LeadId" />
 
-        <!--Lead name-->
-        <div class="form-group">
+                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Sign In</a></li>
 
-            <label> Name</label>
-            <input name="LeadName" #LeadName="ngModel" [ngModel]="leadService.formData.LeadName" class="form-control"
-                placeholder="Enter full name" minlength="3" maxlength="25" required
-                [ngClass]="{'is-invalid':LeadName.touched && LeadName.invalid}" />
-            <div class="validation-error" *ngIf="LeadName.touched && LeadName.invalid">
-
-                <div *ngIf="LeadName.errors.required">
-                    Name is required</div>
-            </div>
+            </ul>
         </div>
-        <!--Gender-->
-        <div class="form-group">
+    </div>
+</nav>
+<section class="ftco-section bg-light ftco-bread">
+    <div class="container">
+        <h1 class="mb-3 bread">Registration</h1>
+        <p class="shopping-idea">Add your personal details for registering new account.</p>
+    </div>
+</section>
+<section class="ftco-section bg-light">
+    <div class="container">
+        <form name="leadform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+            <div class="next-round-login">
 
-            <label for="Gender">Gender</label>
+                <!--Lead id-->
+                <input type="hidden" name="LeadId" [ngModel]="leadService.formData.LeadId" />
 
-            &nbsp;&nbsp;
-
-            <label class="radio-inline">
-
-                <input type="radio" name="Gender" [(ngModel)]="leadService.formData.Gender" value="Male" required
-                    #Gender="ngModel" checked="checked">Male
-
-            </label>
-            &nbsp;
-            <label class="radio-inline">
-
-                <input type="radio" name="Gender" [(ngModel)]="leadService.formData.Gender" value="female"
-                    required>female
-
-            </label>
-
-            <div class="validation-error" *ngIf=" Gender.invalid">
-
-               
-
+                <!--Lead name-->
+                <label class="shopping-idea-2"> Name</label>
+                <input name="LeadName" #LeadName="ngModel" [ngModel]="leadService.formData.LeadName"
+                    class="form-control" placeholder="Enter full name" minlength="3" maxlength="25" required
+                    [ngClass]="{'is-invalid':LeadName.touched && LeadName.invalid}" />
+                <div class="validation-error" *ngIf="LeadName.touched && LeadName.invalid">
+                    <div *ngIf="LeadName.errors.required">
+                        <p class="shopping-idea-1">Name is required</p>
+                    </div>
+                </div>
             </div>
 
-        </div>
+            <!--Gender-->
+            <label class="shopping-idea-4" for="Gender">Gender</label>
+            <input type="radio" name="Gender" [(ngModel)]="leadService.formData.Gender" value="Male" required
+                        #Gender="ngModel" checked="checked"><span class="shopping-idea-3">Male</span>
+            <input type="radio" name="Gender" [(ngModel)]="leadService.formData.Gender" value="female"
+                        required><span class="shopping-idea-3">Female</span>
+            <br><br>
 
-
-        <!--Highest Qualification-->
-        <div class="form-group">
-
-            <label>Highest Qualification</label>
-            <input type="text" name="HighestQualification" #HighestQualification="ngModel"
+            <div class="next-round-login">
+                <!--Highest Qualification-->
+                <label class="shopping-idea-2">Highest Qualification</label>
+                <input type="text" name="HighestQualification" #HighestQualification="ngModel"
                 [ngModel]="leadService.formData.HighestQualification" class="form-control"
                 placeholder="Enter Highest Qualification" minlength="2" maxlength="25" required
                 [ngClass]="{'is-invalid':HighestQualification.touched && HighestQualification.invalid}" />
-            <div class="validation-error" *ngIf="HighestQualification.touched && HighestQualification.invalid">
+                <div class="validation-error" *ngIf="HighestQualification.touched && HighestQualification.invalid">
+                    <div *ngIf="HighestQualification.errors.required">
+                        <p class="shopping-idea-1">Highest Qualification is required</p>
+                    </div>
+                </div>
 
-                <div *ngIf="HighestQualification.errors.required">
-                    Highest Qualification is required</div>
-            </div>
-        </div>
-        <!--Date of Birth-->
-        <div class="form-group">
-
-            <label>Date of Birth</label>
-            <input type="date" name="Dob" id="Dob" #Dob="ngModel" [ngModel]="leadService.formData.Dob"
+                <!--Date of Birth-->
+                <label class="shopping-idea-2">Date of Birth</label>
+                <input type="date" name="Dob" id="Dob" #Dob="ngModel" [ngModel]="leadService.formData.Dob"
                 class="form-control" required [ngClass]="{'is-invalid':Dob.touched && Dob.invalid}" />
-            <div class="validation-error" *ngIf="Dob.touched && Dob.invalid">
+                <div class="validation-error" *ngIf="Dob.touched && Dob.invalid">
+                    <div *ngIf="Dob.errors.required">
+                        <p class="shopping-idea-1">Date Of Birth is required</p>
+                    </div>
+                </div>
 
-                <div *ngIf="Dob.errors.required">
-                    Date Of Birth is required</div>
-            </div>
-        </div>
-
-        <!--State-->
-        <div class="form-group">
-
-            <label>State</label>
-            <input type="text" name="AddState" #AddState="ngModel" [ngModel]="leadService.formData.AddState"
+                <!--State-->
+                <label class="shopping-idea-2">State</label>
+                <input type="text" name="AddState" #AddState="ngModel" [ngModel]="leadService.formData.AddState"
                 class="form-control" placeholder="Enter State" minlength="2" maxlength="15" required
                 [ngClass]="{'is-invalid':AddState.touched && AddState.invalid}" />
-            <div class="validation-error" *ngIf="AddState.touched && AddState.invalid">
+                <div class="validation-error" *ngIf="AddState.touched && AddState.invalid">
+                    <div *ngIf="AddState.errors.required">
+                        <p class="shopping-idea-1">State is required</p>
+                    </div>
+                </div>
 
-                <div *ngIf="AddState.errors.required">
-                    State is required</div>
-            </div>
-        </div>
-
-        <!--City-->
-        <div class="form-group">
-
-            <label>City</label>
-            <input name="City" #City="ngModel" [ngModel]="leadService.formData.City" class="form-control"
+                <!--City-->
+                <label class="shopping-idea-2">City</label>
+                <input name="City" #City="ngModel" [ngModel]="leadService.formData.City" class="form-control"
                 placeholder="Enter City" minlength="2" maxlength="15" required
                 [ngClass]="{'is-invalid':City.touched && City.invalid}" />
-            <div class="validation-error" *ngIf="City.touched && City.invalid">
+                <div class="validation-error" *ngIf="City.touched && City.invalid">
+                    <div *ngIf="City.errors.required">
+                        <p class="shopping-idea-1">city is required</p>
+                    </div>
+                </div>
 
-                <div *ngIf="City.errors.required">
-                    city is required</div>
-            </div>
-        </div>
-
-        <!--Pincode-->
-        <div class="form-group">
-
-            <label>Pincode</label>
-            <input type="text" name="Pincode" #Pincode="ngModel" [ngModel]="leadService.formData.Pincode"
+                <!--Pincode-->
+                <label class="shopping-idea-2">Pincode</label>
+                <input type="text" name="Pincode" #Pincode="ngModel" [ngModel]="leadService.formData.Pincode"
                 class="form-control" placeholder="Enter Pincode" minlength="6" maxlength="6" required
                 [ngClass]="{'is-invalid':Pincode.touched && Pincode.invalid}" pattern="^[0-9]*$" />
-            <div class="validation-error" *ngIf="Pincode.touched && Pincode.invalid">
+                <div class="validation-error" *ngIf="Pincode.touched && Pincode.invalid">
+                    <div *ngIf="Pincode.errors.required">
+                        <p class="shopping-idea-1">Pincode is required</p>
+                    </div>
+                </div>
 
-                <div *ngIf="Pincode.errors.required">
-                    Pincode is required</div>
-            </div>
-        </div>
-
-        <!--ContactNo-->
-        <div class="form-group">
-
-            <label>ContactNo</label>
-            <input type="text" name="ContactNo" #ContactNo="ngModel" [ngModel]="leadService.formData.ContactNo"
+                <!--ContactNo-->
+                <label class="shopping-idea-2">ContactNo</label>
+                <input type="text" name="ContactNo" #ContactNo="ngModel" [ngModel]="leadService.formData.ContactNo"
                 class="form-control" placeholder="Enter ContactNo" minlength="10" maxlength="10" required
                 [ngClass]="{'is-invalid':ContactNo.touched && ContactNo.invalid}" pattern="^((\\+91-?)|0)?[0-9]{10}$" />
-            <div class="validation-error" *ngIf="ContactNo.touched && ContactNo.invalid">
+                <div class="validation-error" *ngIf="ContactNo.touched && ContactNo.invalid">
+                    <div *ngIf="ContactNo.errors.required">
+                        <p class="shopping-idea-1">Contact No is required</p>
+                    </div>
+                    <div *ngIf="ContactNo.errors.pattern">
+                        <p class="shopping-idea-1">Contact No is invalid</p>
+                    </div>
+                </div>
 
-                <div *ngIf="ContactNo.errors.required">
-                    Contact No is required</div>
-                <div *ngIf="Contact.errors.pattern">Email address is invalid</div>
-            </div>
-        </div>
-        <!--Email-->
-        <div class="form-group">
-
-            <label>Email</label>
-            <input type="email" name="Email" #Email="ngModel" [ngModel]="leadService.formData.Email"
+                <!--Email-->
+                <label class="shopping-idea-2">Email</label>
+                <input type="email" name="Email" #Email="ngModel" [ngModel]="leadService.formData.Email"
                 class="form-control" placeholder="Enter Email" required
                 [ngClass]="{'is-invalid':Email.touched && Email.invalid}"
                 pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
-            <div class="validation-error" *ngIf="Email.touched && Email.invalid">
-
-                <div *ngIf="Email.errors.required">
-                    Email is required
+                <div class="validation-error" *ngIf="Email.touched && Email.invalid">
+                    <div *ngIf="Email.errors.required">
+                        <p class="shopping-idea-1">Email is required</p>
+                    </div>
+                    <div *ngIf="Email.errors.pattern">
+                        <p class="shopping-idea-1">Email address is invalid</p>
+                    </div>
                 </div>
-                <div *ngIf="Email.errors.pattern">Email address is invalid</div>
+
+                <!--Is Active-->
+                <input type="hidden" name="IsActive" [ngModel]="leadService.formData.IsActive" />
+        
             </div>
-        </div>
+            <button type="submit" class="button-login" [disabled]="!(form.valid && form.dirty)">Register</button>
 
-        <!--Is Active-->
-
-        <input type="hidden" name="IsActive" [ngModel]="leadService.formData.IsActive" />
-
-
-
-
-        <!--submit button-->
-        <br>
-        <div class="form-group">
-            <button type="submit" [disabled]="!(form.valid && form.dirty)"
-                class="btn btn-lg btn-primary form-control">Sign Up</button>
-        </div>
-<br><br><br><br>
-    </form>
-
-</div>
+        </form>
+    </div> 
+    <br><br><br><br>
+</section>
