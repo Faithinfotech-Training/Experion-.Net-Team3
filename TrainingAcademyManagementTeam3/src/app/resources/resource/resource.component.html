@@ -52,7 +52,7 @@
 
         <input type="number" name="ResourceFees" #ResourceFees="ngModel" [(ngModel)]="resservice.formData.ResourceFees"
             class="form-control" place holder="Enter Resource Fees " minLength="2" maxLength="25" required
-            [ngClass]="{'is invalid':ResourceFees.touched && ResourceFees.invalid}" />
+            [ngClass]="{'is invalid':ResourceFees.touched && ResourceFees.invalid}"  onkeypress="return event.charCode >= 48"/>
 
         <div class="validation-error" *ngIf="ResourceFees.touched&&ResourceFees.invalid">
 
@@ -100,5 +100,5 @@
 
 
 </form>
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div> 

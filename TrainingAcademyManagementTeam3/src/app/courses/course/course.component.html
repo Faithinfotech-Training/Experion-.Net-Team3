@@ -47,8 +47,8 @@
         <div class="form-group">
             <label>Course Fees</label>
             <input type="number" name="CourseFees" #CourseFees="ngModel" [(ngModel)]="corservice.formData.CourseFees"
-                class="form-control" place holder="enter Course Fees " minLength="2" maxLength="25" required
-                [ngClass]="{'is invalid':CourseFees.touched && CourseFees.invalid}" />
+                class="form-control" place holder="enter Course Fees "  maxlength="4" required
+                [ngClass]="{'is invalid':CourseFees.touched && CourseFees.invalid}" onkeypress="return event.charCode >= 48" min="1" max="999999"/>
             <div class="validation-error" *ngIf="CourseFees.touched&&CourseFees.invalid">
             <div *ngIf="CourseFees.errors.required">Course Fees is required</div>
     
@@ -106,7 +106,7 @@
             class="btn btn-lg btn-primary form-control">Submit</button>
         </div>
     </form> <br><br><br><br>
-    
+    <br><br><br><br><br><br><br><br>
     
     
   </div>

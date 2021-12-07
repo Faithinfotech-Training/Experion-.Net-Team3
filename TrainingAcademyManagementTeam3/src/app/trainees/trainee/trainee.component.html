@@ -24,17 +24,37 @@
     <input style="display: none;" type="text" name="TraineeId" [(ngModel)]="traineeService.formData.TraineeId">
 
    
-    <!--LeadId-->
-    <div class="form-group">
-        <label>LeadId</label>
-        <input name="LeadId" #LeadId="ngModel" [(ngModel)]="traineeService.formData.LeadId"
-            class="form-control" placeholder="Enter LeadId" required
-            [ngClass]="{ 'is-invalid': LeadId.touched && LeadId.invalid }" />
-        <div class="validation-error" *ngIf="LeadId.touched && LeadId.invalid">
-            <div *ngIf="LeadId.errors.required">LeadId is required</div>
 
-        </div>
+<!--LeadId-->
+<div class="form-group">
+    <label>Lead Id</label>
+    <input name="LeadId" #LeadId="ngModel" [(ngModel)]="traineeService.formData.LeadId" class="form-control"
+        placeholder="Enter LeadId" required [ngClass]="{ 'is-invalid': LeadId.touched && LeadId.invalid }" />
+    <div class="validation-error" *ngIf="LeadId.touched && LeadId.invalid">
+        <div *ngIf="LeadId.errors.required">LeadId is required</div>
+
     </div>
+</div>
+
+
+<!--Lead Name-->
+<div class="form-group">
+    <label class="col-md-4">Lead Name</label>
+
+    <select name="LeadName" id="LeadName" class="form-control" #LeadName="ngModel" required
+        [(ngModel)]="leadservice.formData.LeadId">
+       
+             <ng-container *ngFor="let ld of leadservice.leads">
+                <option   *ngIf="traineeService.formData.LeadId == ld.LeadId" value=0>{{ld.LeadName}}</option>
+            </ng-container>
+
+       
+
+    </select>
+</div>
+<div class="validation-error" *ngIf="LeadName.touched && LeadName.invalid">
+    <div *ngIf="LeadName.errors.required"></div>
+</div>
     
     <!--Batch dropdown-->
     <div class="form-group">
@@ -67,6 +87,6 @@
             Submit
         </button>
     </div>
-</form><br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br>
+</form><br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br> <br><br>
     
 </div>

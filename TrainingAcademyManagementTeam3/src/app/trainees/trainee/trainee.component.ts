@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { TraineeService } from 'src/app/shared/trainee.service';
 import { BatchService } from 'src/app/shared/batch.service';
 import { Trainee } from 'src/app/shared/trainee';
+import { TraineeviewService } from 'src/app/shared/traineeview.service';
+import { LeadService } from 'src/app/shared/lead.service';
 
 @Component({
   selector: 'app-trainee',
@@ -16,12 +18,13 @@ export class TraineeComponent implements OnInit {
   trId:number;
   trainee: Trainee = new Trainee();
   constructor(public traineeService: TraineeService,public batchService: BatchService,private toxterService: ToastrService, private router :Router, 
-    private route :ActivatedRoute  ) { }
+    private route :ActivatedRoute,public leadservice:LeadService  ) { }
 
   ngOnInit(): void {
     //this.resetform();
+    this.leadservice.bindLead();
     this.batchService.bindListBatches();
-
+    this.traineeService.bindListTrainee();
 
     //get trId from Activated route
     this.trId = this.route.snapshot.params['trId'];
@@ -82,7 +85,7 @@ insertTrainee(form?:NgForm)
       this.toxterService.success('Trainee details Inserted!', 'succes!');
     }
   );
-  this.router.navigate(['traineedit']);
+  this.router.navigate(['trainee']);
 }
 //update trainee
 

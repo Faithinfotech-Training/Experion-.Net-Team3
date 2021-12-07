@@ -48,12 +48,15 @@
         </div>
 
         <!--Password-->
-        <input type="password" name="UserPassword" #UserPassword="ngModel" [ngModel]="conService.formData.UserPassword"
-          class="form-control" placeholder="Enter new password" minlength="6" maxlength="25" required
+        <input type="password" pattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,16}$" name="UserPassword" #UserPassword="ngModel" [ngModel]="conService.formData.UserPassword"
+          class="form-control" placeholder="Enter new password" minlength="8" maxlength="16" required
           [ngClass]="{'is-invalid':UserPassword.touched && UserPassword.invalid}" />
         <div class="validation-error" *ngIf="UserPassword.touched && UserPassword.invalid">
           <div *ngIf="UserPassword.errors.required">
             <p class="shopping-idea-1">Password is required</p>
+          </div>
+          <div *ngIf="UserPassword.errors.pattern">
+            <p class="shopping-idea-1">Password should contain atleast 8 characters, 1 special character, 1 uppercase letter and digits.</p>
           </div>
         </div>
         <input style="display: none" type="number" name="RoleId" #RoleId="ngModel"

@@ -1,48 +1,67 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7829cf;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Geo Info Tech</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span
-          class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
-         
-        
-        </ul>
-      </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Geo Info Tech</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" aria-current="page"  href="/home">Home</a></li>
+       
+      
+      </ul>
     </div>
-  </nav>
-<div class="container">
-    <div class="header">
-        <h5>Resource Details</h5>
-        <!--Search functionality-->
-        <div class="form-group">
-            <input class="form-control" type="text"
-            placeholder="Search here..." [(ngModel)]="filter"> 
+  </div>
+</nav>
+<div class="container"><br>
+  <div class="header">
+      <h5>Resource Details</h5>
+      <!--Search functionality-->
+      <div class="form-group">
+          <input class="form-control" type="text"
+          placeholder="Search here..." [(ngModel)]="filter"> 
 
-        </div>
-      <br>
-     
-    </div>
+      </div>
+    <br>
+   
+  </div>
 
 
 <div class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4" (ngModel)="filter">
-    <div class="row">
-        <div class="col-4" *ngFor="let crs of resourceService.resources |filter: filter |paginate:{itemsPerPage:3, currentPage: page}" >
-            <div class="card" style="width: 18rem;">
-                <a href=""><img class="card-img-top"
-                        src="http://www.wiu.edu/cbt/images/CbtHomeResourcesFeb2018.jpg" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title">{{crs.ResourceName}}</h5>
-                    <p class="card-text"></p>
-                    <a href="{{'./resourceindividualview/'+crs.ResourceId}}" class="btn btn-purple" >View Details</a>
+  <div class="row">
+      <div class="col-4" *ngFor="let crs of resourceService.resources |filter: filter |paginate:{itemsPerPage:3, currentPage: page}" >
+          <div class="card" style="width: 18rem;">
+              <a href="">
+                <div [ngSwitch]="crs.ResourceId % 4">
+                  <div *ngSwitchCase="'1'">
+                    <br>
+                    <img class="card-img-top" src="https://unblast.com/wp-content/uploads/2020/05/Job-Interview-Illustration.jpg" alt="Card image cap" height="200px" width="300px">
+                  </div>
+                  <div *ngSwitchCase="'2'">
+                    <br>
+                    <img class="card-img-top" src="https://developer-economics.cdn.prismic.io/developer-economics%2Fbe92fea5-6262-423b-b3f3-cc0511c490a7_resources.svg" alt="Card image cap" height="200px" width="300px">
+                  </div>
+                  <div *ngSwitchCase="'3'">
+                    <br>
+                    <img class="card-img-top" src="https://prominentpixel.com/assets/images/shape/hire-hadoop.svg" alt="Card image cap" height="200px" width="300px">
+                  </div>
+                  <div *ngSwitchDefault>
+                    <br>
+                    <img class="card-img-top" src="http://www.wiu.edu/cbt/images/CbtHomeResourcesFeb2018.jpg" alt="Card image cap" height="200px" width="300px">
+                  </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <!--Pagination-->
-        <pagination-controls (pageChange)="page=($event)"></pagination-controls>
-    </div>
+              </a>
+              <div class="card-body">
+                  <h5 class="card-title">{{crs.ResourceName}}</h5>
+                  <p class="card-text"></p>
+                  <a href="{{'./resourceindividualview/'+crs.ResourceId}}" class="btn btn-purple" >View Details</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <br><br><br>
+  <div class="footer">
+      <!--Pagination-->
+      <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+  </div>
 </div>

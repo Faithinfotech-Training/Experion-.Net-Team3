@@ -59,3 +59,10 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
+    h2{
+      font-size: 30px;
+      text-align: center;
+      color:black;
+      text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc;
+    }

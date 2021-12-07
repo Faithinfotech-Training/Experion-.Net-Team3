@@ -58,15 +58,15 @@ const routes: Routes = [
   {path :'admin',component:AdminComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path :'manager',component:ManagerComponent, canActivate:[AuthGuard],data:{role:'2'}},
   {path:'courses',component:CoursesComponent},
-  {path:'course', component: CourseComponent},
-  {path:'courselist',component: CourseListComponent},
-  {path:'course/:corId', component: CourseComponent},
-  {path:'courselist/course',component: CourseComponent},
-  {path:'resources',component:ResourceComponent},
-  {path:'resource', component: ResourceComponent},
-  {path:'resourcelist',component: ResourceListComponent},
-  {path:'resourcelist/resource',component: ResourceComponent},
-  {path:'resource/:resId', component: ResourceComponent},
+  {path:'course', component: CourseComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'courselist',component: CourseListComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'course/:corId', component: CourseComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'courselist/course',component: CourseComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'resources',component:ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'resource', component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'resourcelist',component: ResourceListComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'resourcelist/resource',component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'resource/:resId', component: ResourceComponent,canActivate:[AuthGuard],data:{role:'1'}},
   {path:'resourcelistlead',component: ResourcelistLeadComponent },
   {path:'courselistlead',component: CourselistLeadComponent },
   {path :'confirm',component:ConfirmComponent},
@@ -74,42 +74,42 @@ const routes: Routes = [
   {path :'lead',component:LeadComponent}, //route.snapshot.params[]
   {path :'leadlist',component:LeadListComponent},
   {path :'lead/:leadId',component:LeadComponent}, //route.snapshot.params[]
-  {path:'batches',component:BatchesComponent},
-  {path:'batch', component: BatchComponent},
-  {path:'batchlist',component: BatchListComponent},
-  {path:'batch/:batId', component: BatchComponent},
-  {path:'batchlist/batch',component: BatchComponent},
-  {path:'salespipeline',component: SalespipelinelistManagerComponent },
+  {path:'batches',component:BatchesComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'batch', component: BatchComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'batchlist',component: BatchListComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'batch/:batId', component: BatchComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'batchlist/batch',component: BatchComponent,canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'salespipeline',component: SalespipelinelistManagerComponent, canActivate:[AuthGuard],data:{role:'2'} },
   {path: 'resourceenquiry', component: ResourceenquiryComponent},//lead side form
   {path: 'courseenquiry', component: CourseenquiryComponent},//lead side form
-  {path: 'resourceenquirylist', component: ResourceenquiryListComponent},//table
-  {path: 'courseenquirylist', component: CourseenquirylistComponent},//table
-  {path: 'resourceenquiries', component: ResourceenquiriesComponent},//coordinator side
-  {path: 'courseenquiries', component: CourseenquiriesComponent},//coordinator side
-  {path:'managerresourceenquiryview', component: ResourceenquiryviewComponent},
-  {path:'editcourseenquirystatus', component: EditcourseenquiryComponent},
-  {path :'managercourseenquiryview',component:CourseenquiryviewComponent},
-  {path:'editresourceenquirystatus', component: EditresourceenquiryComponent},
+  {path: 'resourceenquirylist', component: ResourceenquiryListComponent, canActivate:[AuthGuard],data:{role:'3'}},//table
+  {path: 'courseenquirylist', component: CourseenquirylistComponent, canActivate:[AuthGuard],data:{role:'3'}},//table
+  {path: 'resourceenquiries', component: ResourceenquiriesComponent, canActivate:[AuthGuard],data:{role:'3'}},//coordinator side
+  {path: 'courseenquiries', component: CourseenquiriesComponent, canActivate:[AuthGuard],data:{role:'3'}},//coordinator side
+  {path:'managerresourceenquiryview', component: ResourceenquiryviewComponent, canActivate:[AuthGuard],data:{role:'2'}},
+  {path:'editcourseenquirystatus', component: EditcourseenquiryComponent, canActivate:[AuthGuard],data:{role:'2'}},
+  {path :'managercourseenquiryview',component:CourseenquiryviewComponent, canActivate:[AuthGuard],data:{role:'2'}},
+  {path:'editresourceenquirystatus', component: EditresourceenquiryComponent, canActivate:[AuthGuard],data:{role:'3'}},
    {path:'resourceindividualview/:resId', component: ResourceindividualviewComponent},
-  {path:'coordinator',component:CoordinatorComponent},
+  {path:'coordinator',component:CoordinatorComponent,canActivate:[AuthGuard],data:{role:'3'}},
   {path:'leadview',component:LeadviewComponent},
   {path:'courseindividualview/:corId', component: CourseindividualviewComponent},
-  {path:'charts/corenqchart', component: CorenqchartComponent},
-  {path:'charts/resenqchart', component: ResenqchartComponent},
+  {path:'charts/corenqchart', component: CorenqchartComponent, canActivate:[AuthGuard],data:{role:'2'}},
+  {path:'charts/resenqchart', component: ResenqchartComponent, canActivate:[AuthGuard],data:{role:'2'}},
 
   {path:'aboutus',component:AboutusComponent},
 
   {path:'charts/corstatuschart', component: CorstatuschartComponent},
   {path:'charts/resstatuschart', component: ResstatuschartComponent},
-  {path:'trainee', component: TraineeComponent},
-  {path:'traineelist', component: TraineeListComponent},
-  {path:'traineedit', component: TraineeditComponent},
-  {path:'traineedit/trainee', component: TraineeComponent},
-  {path:'trainee/:trId', component: TraineeComponent},
-  {path:'trainees', component: TraineesComponent},
-  {path:'trainees/trainee', component: TraineeComponent},
+  {path:'trainee', component: TraineeComponent, canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'traineelist', component: TraineeListComponent, canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'traineedit', component: TraineeditComponent, canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'traineedit/trainee', component: TraineeComponent, canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'trainee/:trId', component: TraineeComponent, canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'trainees', component: TraineesComponent, canActivate:[AuthGuard],data:{role:'1'}},
+  {path:'trainees/trainee', component: TraineeComponent, canActivate:[AuthGuard],data:{role:'1'}},
 
-  {path:'batchpage', component: BatchpageComponent},
+  {path:'batchpage', component: BatchpageComponent, canActivate:[AuthGuard],data:{role:'1'}},
 
  
 
